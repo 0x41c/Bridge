@@ -1,0 +1,12 @@
+included:
+    - Sources
+    - Tests
+disabled_rules:
+    - line_length
+    - file_length
+    - identifier_name
+    - type_name
+    - force_cast
+    - function_parameter_count
+    - colon
+
