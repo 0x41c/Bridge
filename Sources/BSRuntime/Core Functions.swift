@@ -20,6 +20,17 @@ private func _getResilientPointer<T>(
     _ duplicate: Any.Type
 ) -> T
 
+///
+/// Given some metadata, this will pass it through a cast in C++
+/// to give back a pointer to the metadata, and allow it to by bound to
+/// a custom type. This allows asan to be happy about reading what could
+/// potentially be out of bounds memory.
+///
+/// - Parameters:
+///   - metadata: The metadata to desanitize from asan.
+///
+/// - Returns: A pointer to whatever type you want to bind the metadata to.
+///
 @_silgen_name("swift_desanitizeMetadata")
 public func swift_desanitizeMetadata<T>(_ metadata: Any.Type) -> UnsafeMutablePointer<T> {
     return _getResilientPointer(metadata, metadata)

@@ -5,9 +5,9 @@
 //  Created by 0x41c on 2022-02-27.
 //
 
-struct ProtocolMetadata: StructureRepresentation {
+public struct ProtocolMetadata: StructureRepresentation {
 
-    struct InternalRepresentation: InternalStructureBase {
+    public struct InternalRepresentation: InternalStructureBase {
 
         private var _kind: Int
         private var _layoutFlags: Int
@@ -16,10 +16,10 @@ struct ProtocolMetadata: StructureRepresentation {
 
     }
 
-    var `_`: UnsafeMutablePointer<InternalRepresentation>
-    var kind: Int { `_`.pointee.kind! }
-    var layoutFlags: Int { `_`.pointee.layoutFlags! }
-    var numberOfProtocols: Int { `_`.pointee.numberOfProtocols! }
-    var nominalTypeDescriptor: UnsafeRawPointer { `_`.pointee.nominalTypeDescriptor! }
+    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var kind: Int { `_`.pointee.kind! }
+    public var layoutFlags: Int { `_`.pointee.layoutFlags! }
+    public var numberOfProtocols: Int { `_`.pointee.numberOfProtocols! }
+    public var nominalTypeDescriptor: UnsafeRawPointer { `_`.pointee.nominalTypeDescriptor! }
 
 }

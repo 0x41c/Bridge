@@ -5,9 +5,9 @@
 //  Created by 0x41c on 2022-02-27.
 //
 
-struct FunctionMetadata: StructureRepresentation {
+public struct FunctionMetadata: StructureRepresentation {
 
-    struct InternalRepresentation: InternalStructureBase {
+    public struct InternalRepresentation: InternalStructureBase {
 
         private var _kind: Int
         private var _flags: Int
@@ -15,9 +15,9 @@ struct FunctionMetadata: StructureRepresentation {
 
     }
 
-    var `_`: UnsafeMutablePointer<InternalRepresentation>
-    var kind: Int { `_`.pointee.kind! }
-    var flags: UnsafeRawPointer { `_`.pointee.flags! }
-    var argumentVector: UnsafeRawPointer { `_`.pointee.argumentVector! }
+    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var kind: Int { `_`.pointee.kind! }
+    public var flags: UnsafeRawPointer { `_`.pointee.flags! }
+    public var argumentVector: UnsafeRawPointer { `_`.pointee.argumentVector! }
 
 }

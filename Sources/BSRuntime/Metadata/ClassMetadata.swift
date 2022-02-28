@@ -5,9 +5,9 @@
 //  Created by 0x41c on 2022-02-25.
 //
 
-struct ClassMetadata: StructureRepresentation {
+public struct ClassMetadata: StructureRepresentation {
 
-    struct InternalRepresentation: InternalStructureBase {
+    public struct InternalRepresentation: InternalStructureBase {
 
         private var _kind: Int
         private var _superclass: Any.Type?
@@ -27,21 +27,21 @@ struct ClassMetadata: StructureRepresentation {
 
     }
 
-    var `_`: UnsafeMutablePointer<InternalRepresentation>
-    var kind: Int { `_`.pointee.kind! }
-    var superclass: Any.Type? { `_`.pointee.superclass! }
+    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var kind: Int { `_`.pointee.kind! }
+    public var superclass: Any.Type? { `_`.pointee.superclass! }
     #if swift(>=5.4) || canImport(ObjectiveC)
-    var reserved: (Int, Int) { `_`.pointee.reserved! }
-    var rodata: UnsafeRawPointer { `_`.pointee.rodata! }
+    public var reserved: (Int, Int) { `_`.pointee.reserved! }
+    public var rodata: UnsafeRawPointer { `_`.pointee.rodata! }
     #endif
-    var flags: UInt32 { `_`.pointee.flags! }
-    var instanceAddressPoint: UInt32 { `_`.pointee.instanceAddressPoint! }
-    var instanceSize: UInt32 { `_`.pointee.instanceSize! }
-    var instanceAlignment: UInt16 { `_`.pointee.instanceAlignment! }
-    var runtimeReservedField: UInt16 { `_`.pointee.runtimeReservedField! }
-    var classObjectSize: UInt32 { `_`.pointee.classObjectSize! }
-    var classObjectAddressPoint: UInt32 { `_`.pointee.classObjectAddressPoint! }
-    var nominalTypeDescriptor: UnsafeRawPointer { `_`.pointee.nominalTypeDescriptor! }
-    var ivarDestroyer: UnsafeRawPointer { `_`.pointee.ivarDestroyer! }
+    public var flags: UInt32 { `_`.pointee.flags! }
+    public var instanceAddressPoint: UInt32 { `_`.pointee.instanceAddressPoint! }
+    public var instanceSize: UInt32 { `_`.pointee.instanceSize! }
+    public var instanceAlignment: UInt16 { `_`.pointee.instanceAlignment! }
+    public var runtimeReservedField: UInt16 { `_`.pointee.runtimeReservedField! }
+    public var classObjectSize: UInt32 { `_`.pointee.classObjectSize! }
+    public var classObjectAddressPoint: UInt32 { `_`.pointee.classObjectAddressPoint! }
+    public var nominalTypeDescriptor: UnsafeRawPointer { `_`.pointee.nominalTypeDescriptor! }
+    public var ivarDestroyer: UnsafeRawPointer { `_`.pointee.ivarDestroyer! }
 
 }

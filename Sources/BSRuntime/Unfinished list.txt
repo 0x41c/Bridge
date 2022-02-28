@@ -1,0 +1,266 @@
+//// Metadata *swift_getFunctionTypeMetadata0(unsigned long flags, const Metadata *resultMetadata);
+// @_silgen_name("swift_getFunctionTypeMetadata0")
+
+//// Metadata *swift_getFunctionTypeMetadata1(unsigned long flags, const Metadata *arg0, const Metadata *resultMetadata);
+// @_silgen_name("swift_getFunctionTypeMetadata1")
+
+//// Metadata *swift_getFunctionTypeMetadata2(unsigned long flags, const Metadata *arg0, const Metadata *arg1, const Metadata *resultMetadata);
+// @_silgen_name("swift_getFunctionTypeMetadata2")
+
+//// Metadata *swift_getFunctionTypeMetadata3(unsigned long flags, const Metadata *arg0, const Metadata *arg1, const Metadata *arg2, const Metadata *resultMetadata);
+// @_silgen_name("swift_getFunctionTypeMetadata3")
+
+//// Metadata * swift_getFunctionTypeMetadataDifferentiable(unsigned long flags, unsigned long diffKind, const Metadata **parameters, const uint32_t *parameterFlags, const Metadata *result);
+// @_silgen_name("swift_getFunctionTypeMetadataDifferentiable")
+
+//// Metadata * swift_getFunctionTypeMetadataGlobalActor(unsigned long flags, unsigned long diffKind, const Metadata **parameters, const uint32_t *parameterFlags, const Metadata *result, const Metadata *globalActor);
+// @_silgen_name("swift_getFunctionTypeMetadataGlobalActor")
+
+//// MetadataResponse swift_getGenericMetadata(MetadataRequest request, const void * const *arguments, TypeContextDescriptor *type);
+// @_silgen_name("swift_getGenericMetadata")
+
+//// Metadata *swift_getMetatypeMetadata(Metadata *instanceTy);
+// @_silgen_name("swift_getMetatypeMetadata")
+
+//// unsigned swift_getMultiPayloadEnumTagSinglePayload(const OpaqueValue *value, uint32_t numExtraCases, const Metadata *enumType)
+// @_silgen_name("swift_getMultiPayloadEnumTagSinglePayload")
+
+//// Metadata *swift_getObjCClassFromMetadata(objc_class *theClass);
+// @_silgen_name("swift_getObjCClassFromMetadata")
+
+//// Metadata *swift_getObjCClassFromObject(id object);
+// @_silgen_name("swift_getObjCClassFromObjde ct")
+
+//// Metadata *swift_getObjCClassMetadata(objc_class *theClass);
+// @_silgen_name("swift_getObjCClassMetadata")
+
+//// Metadata *swift_getObjectType(id object);
+// @_silgen_name("swift_getObjectType")
+
+//// const WitnessTable *swift_getOpaqueTypeConformance(const void * const *arguments, const OpaqueTypeDescriptor *descriptor, uintptr_t index);
+// @_silgen_name("swift_getOpaqueTypeConformance")
+
+//// MetadataResponse swift_getOpaqueTypeMetadata(MetadataRequest request, const void * const *arguments, const OpaqueTypeDescriptor *descriptor, uintptr_t index);
+// @_silgen_name("swift_getOpaqueTypeMetadata")
+
+//// MetadataResponse swift_getSingletonMetadata(MetadataRequest request, TypeContextDescriptor *type);
+// @_silgen_name("swift_getSingletonMetadata")
+
+//// void swift_getTupleTypeLayout(TypeLayout *result, uint32_t offsets, TupleTypeFlags flags, const TypeLayout * const *elts);
+// @_silgen_name("swift_getTupleTypeLayout")
+
+//// Int swift_getTupleTypeLayout2(TypeLayout *layout, const TypeLayout *elt0, const TypeLayout *elt1);
+// @_silgen_name("swift_getTupleTypeLayout2")
+
+//// OffsetPair swift_getTupleTypeLayout3(TypeLayout *layout, const TypeLayout *elt0, const TypeLayout *elt1, const TypeLayout *elt2);
+// @_silgen_name("swift_getTupleTypeLayout3")
+
+//// MetadataResponse swift_getTupleTypeMetadata(MetadataRequest request, TupleTypeFlags flags, Metadata * const *elts, const char *labels, value_witness_table_t *proposed);
+// @_silgen_name("swift_getTupleTypeMetadata")
+
+//// MetadataResponse swift_getTupleTypeMetadata2(MetadataRequest request, Metadata *elt0, Metadata *elt1, const char *labels, value_witness_table_t *proposed);
+// @_silgen_name("swift_getTupleTypeMetadata2")
+
+//// MetadataResponse swift_getTupleTypeMetadata3(MetadataRequest request, Metadata *elt0, Metadata *elt1, Metadata *elt2, const char *labels, value_witness_table_t *proposed);
+// @_silgen_name("swift_getTupleTypeMetadata3")
+
+//// const Metadata *swift_getTypeByMangledNameInContext( const char *typeNameStart, Int typeNameLength, const TargetContextDescriptor<InProcess> *context, const void * const *genericArgs)
+// @_silgen_name("swift_getTypeByMangledNameInContext")
+
+//// const Metadata *swift_getTypeByMangledNameInContextInMetadataState( Int metadataState, const char *typeNameStart, Int typeNameLength, const TargetContextDescriptor<InProcess> *context, const void * const *genericArgs)
+// @_silgen_name("swift_getTypeByMangledNameInContextInMetadataState")
+
+//// const ProtocolWitnessTable * swift_getWitnessTable(const ProtocolConformanceDescriptor *conf, const Metadata *type, const void * const *instantiationArgs);
+// @_silgen_name("swift_getWitnessTable")
+
+//// void swift_initClassMetadata(Metadata *self, ClassLayoutFlags flags, Int numFields, TypeLayout * const *fieldTypes, Int *fieldOffsets);
+// @_silgen_name("swift_initClassMetadata")
+
+//// MetadataDependency swift_initClassMetadata2(Metadata *self, ClassLayoutFlags flags, Int numFields, TypeLayout * const *fieldTypes, Int *fieldOffsets);
+// @_silgen_name("swift_initClassMetadata2")
+
+//// void swift_initEnumMetadataMultiPayload(Metadata *enumType, Int numPayloads, TypeLayout * const *payloadTypes);
+// @_silgen_name("swift_initEnumMetadataMultiPayload")
+
+//// void swift_initEnumMetadataSingleCase(Metadata *enumType, EnumLayoutFlags flags, TypeLayout *payload);
+// @_silgen_name("swift_initEnumMetadataSingleCase")
+
+//// void swift_initEnumMetadataSinglePayload(Metadata *enumType, EnumLayoutFlags flags, TypeLayout *payload, unsigned num_empty_cases);
+// @_silgen_name("swift_initEnumMetadataSinglePayload")
+
+//// HeapObject *swift_initStackObject(HeapMetadata const *metadata, HeapObject *object);
+// @_silgen_name("swift_initStackObject")
+
+//// HeapObject *swift_initStaticObject(HeapMetadata const *metadata, HeapObject *object);
+// @_silgen_name("swift_initStaticObject")
+
+//// void swift_initStructMetadata(Metadata *structType, StructLayoutFlags flags, Int numFields, TypeLayout * const *fieldTypes, uint32_t *fieldOffsets);
+// @_silgen_name("swift_initStructMetadata")
+
+//// bool swift_isDeallocating(void *ptr);
+// @_silgen_name("swift_isDeallocating")
+
+//// bool swift_isEscapingClosureAtFileLocation(const struct HeapObject *object, const unsigned char *filename, int32_t filenameLength, int32_t line, int32_t col, unsigned type);
+// @_silgen_name("swift_isEscapingClosureAtFileLocation")
+
+//// bool swift_isOptionalType(type*);
+// @_silgen_name("swift_isOptionalType")
+
+//// bool swift_isUniquelyReferencedNonObjC(const void *);
+// @_silgen_name("swift_isUniquelyReferencedNonObjC")
+
+//// bool swift_isUniquelyReferencedNonObjC_nonNull(const void *);
+// @_silgen_name("swift_isUniquelyReferencedNonObjC_nonNull")
+
+//// bool swift_isUniquelyReferencedNonObjC_nonNull_bridgeObject( uintptr_t bits);
+// @_silgen_name("swift_isUniquelyReferencedNonObjC_nonNull_bridgeObject")
+
+//// bool swift_isUniquelyReferenced_native(const struct HeapObject *);
+// @_silgen_name("swift_isUniquelyReferenced_native")
+
+//// bool swift_isUniquelyReferenced_nonNull_native(const struct HeapObject *);
+// @_silgen_name("swift_isUniquelyReferenced_nonNull_native")
+
+//// void *swift_lookUpClassMethod(Metadata *metadata, ClassDescriptor *description, MethodDescriptor *method);
+// @_silgen_name("swift_lookUpClassMethod")
+
+//// BoxPair swift_makeBoxUnique(OpaqueValue *buffer, Metadata *type, Int alignMask);
+// @_silgen_name("swift_makeBoxUnique")
+
+//// void swift_nonatomic_bridgeObjectRelease_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_bridgeObjectRelease_n")
+
+//// void *swift_nonatomic_bridgeObjectRetain(void *ptr);
+// @_silgen_name("swift_nonatomic_bridgeObjectRetain")
+
+//// void swift_nonatomic_bridgeObjectRetain_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_bridgeObjectRetain_n")
+
+//// void swift_nonatomic_bridgeRelease(void *ptr);
+// @_silgen_name("swift_nonatomic_bridgeRelease")
+
+//// void swift_nonatomic_release(void *ptr);
+// @_silgen_name("swift_nonatomic_release")
+
+//// void swift_nonatomic_release_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_release_n")
+
+//// void *swift_nonatomic_retain(void *ptr);
+// @_silgen_name("swift_nonatomic_retain")
+
+//// void *swift_nonatomic_retain_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_retain_n")
+
+//// void swift_nonatomic_unknownObjectRelease(void *ptr);
+// @_silgen_name("swift_nonatomic_unknownObjectRelease")
+
+//// void swift_nonatomic_unknownObjectRelease_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_unknownObjectRelease_n")
+
+//// void *swift_nonatomic_unknownObjectRetain(void *ptr);
+// @_silgen_name("swift_nonatomic_unknownObjectRetain")
+
+//// void *swift_nonatomic_unknownObjectRetain_n(void *ptr, int32_t n);
+// @_silgen_name("swift_nonatomic_unknownObjectRetain_n")
+
+//// void swift_objc_swift3ImplicitObjCEntrypoint(id self, SEL selector) float swift_intToFloat32(const Int *data, IntegerLiteralFlags flags);
+// @_silgen_name("swift_objc_swift3ImplicitObjCEntrypoint")
+
+//// void swift_once(swift_once_t *predicate, void (*function_code)(RefCounted*), void *context);
+// @_silgen_name("swift_once")
+
+//// void swift_registerProtocolConformances(const ProtocolConformanceRecord *begin, const ProtocolConformanceRecord *end)
+// @_silgen_name("swift_registerProtocolConformances")
+
+//// void swift_registerProtocols(const ProtocolRecord *begin, const ProtocolRecord *end)
+// @_silgen_name("swift_registerProtocols")
+
+//// void swift_release(void *ptr);
+// @_silgen_name("swift_release")
+
+//// void *swift_release_n(void *ptr, int32_t n);
+// @_silgen_name("swift_release_n")
+
+//// Metadata *swift_relocateClassMetadata(TypeContextDescriptor *descriptor, const void *pattern);
+// @_silgen_name("swift_relocateClassMetadata")
+
+//// void *swift_retain(void *ptr);
+// @_silgen_name("swift_retain")
+
+//// void *swift_retain_n(void *ptr, int32_t n);
+// @_silgen_name("swift_retain_n")
+
+//// void swift_setDeallocating(void *ptr);
+// @_silgen_name("swift_setDeallocating")
+
+//// void *swift_slowAlloc(Int size, Int alignMask);
+// @_silgen_name("swift_slowAlloc")
+
+//// void swift_slowDealloc(void *ptr, Int size, Int alignMask);
+// @_silgen_name("swift_slowDealloc")
+
+//// void swift_storeEnumTagMultiPayload(opaque_t *obj, Metadata *enumTy, int case_index);
+// @_silgen_name("swift_storeEnumTagMultiPayload")
+
+//// void swift_storeEnumTagSinglePayloadGeneric(opaque_t *obj, unsigned case_index, unsigned num_empty_cases, Metadata *payloadType, void (*storeExtraInhabitant)(opaque_t *obj, unsigned case_index, unsigned numPayloadXI, Metadata *payload));
+// @_silgen_name("swift_storeEnumTagSinglePayloadGeneric")
+
+//// void swift_storeMultiPayloadEnumTagSinglePayload(OpaqueValue *value, uint32_t index, uint32_t numExtraCases, const Metadata *enumType);
+// @_silgen_name("swift_storeMultiPayloadEnumTagSinglePayload")
+
+//// void swift_taskGroup_destroy(TaskGroup *group);
+// @_silgen_name("swift_taskGroup_destroy")
+
+//// void swift_taskGroup_initialize(TaskGroup *group);
+// @_silgen_name("swift_taskGroup_initialize")
+
+//// void swift_task_cancel(AsyncTask *task);
+// @_silgen_name("swift_task_cancel")
+
+//// AsyncTaskAndContext swift_task_create( Int taskCreateFlags, TaskOptionRecord *options, const Metadata *futureResultType, void *closureEntry, HeapObject *closureContext);
+// @_silgen_name("swift_task_create")
+
+//// void swift_task_dealloc(void *ptr);
+// @_silgen_name("swift_task_dealloc")
+
+//// AsyncTask *swift_task_getCurrent();s void *swift_task_alloc(Int size);
+// @_silgen_name("swift_task_getCurrent")
+
+//// ExecutorRef swift_task_getCurrentExecutor();
+// @_silgen_name("swift_task_getCurrentExecutor")
+
+//// ExecutorRef swift_task_getMainExecutor();
+// @_silgen_name("swift_task_getMainExecutor")
+
+//// void swift_task_switch(AsyncContext *resumeContext, TaskContinuationFunction *resumeFunction, ExecutorRef newExecutor);
+// @_silgen_name("swift_task_switch")
+
+//// void *swift_tryRetain(void *ptr);
+// @_silgen_name("swift_tryRetain")
+
+//// void swift_unexpectedError(error *ptr);
+// @_silgen_name("swift_unexpectedError")
+
+//// void swift_unknownObjectRelease(void *ptr);
+// @_silgen_name("swift_unknownObjectRelease")
+
+//// void swift_unknownObjectRelease_n(void *ptr, int32_t n);
+// @_silgen_name("swift_unknownObjectRelease_n")
+
+//// void *swift_unknownObjectRetain(void *ptr);
+// @_silgen_name("swift_unknownObjectRetain")
+
+//// void *swift_unknownObjectRetain_n(void *ptr, int32_t n);
+// @_silgen_name("swift_unknownObjectRetain_n")
+
+//// void swift_updateClassMetadata(Metadata *self, ClassLayoutFlags flags, Int numFields, TypeLayout * const *fieldTypes, Int *fieldOffsets);
+// @_silgen_name("swift_updateClassMetadata")
+
+//// MetadataDependency swift_updateClassMetadata2(Metadata *self, ClassLayoutFlags flags, Int numFields, TypeLayout * const *fieldTypes, Int *fieldOffsets);
+// @_silgen_name("swift_updateClassMetadata2")
+
+//// void swift_verifyEndOfLifetime(HeapObject *object);
+// @_silgen_name("swift_verifyEndOfLifetime")
+
+//// void swift_willThrow(error *ptr);
+// @_silgen_name("swift_willThrow")

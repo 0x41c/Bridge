@@ -299,7 +299,6 @@ internal struct _EachFieldOptions: OptionSet {
 
 }
 
-
 ///
 /// Gets all the keypaths of a type
 ///

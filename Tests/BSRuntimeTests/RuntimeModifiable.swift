@@ -37,40 +37,38 @@ final class KeyPathListableTests: XCTestCase {
 
     func testReadWriteFunctionality() {
         print("\n")
-        do {
-            let typeErasedNonConformingStruct: Any = NonConformingStruct()
-            let structures: [AnyRuntimeModifiable] = [
-                ConformingStruct(), try RuntimeModifiableBuilder.from(anyValue: typeErasedNonConformingStruct)
-            ]
-            typealias CaseTuple = (String, Any.Type, Any)
-            var testCases = [ExpectationType: [CaseTuple]]()
-            testCases[.read] = [("bool", Bool.self, true), ("string", String.self, "A"), ("number", Int.self, 1)]
-            testCases[.write] = [("bool", Bool.self, false), ("string", String.self, "B"), ("number", Int.self, 0)]
-            // testCases = testCases.sorted { $0.key > $1.key }
-            for var structure in structures {
-                currentObjectDescription = structure
-                print("- \(currentObjectDescription):")
-                for (testType, tupleList) in testCases {
-                    currentTestType = testType
-                    for testCase in tupleList {
-                        conductTest(
-                            member: testCase.0,
-                            type: testType,
-                            currentValue: structure.get(testCase.0, testCase.1 as? AnyHashable.Type)!,
-                            expectedValue: testCase.2 as? AnyHashable
-                        ) {
-                            structure.set(testCase.0, testCase.2)
-                            return structure.get(testCase.0, testCase.1 as? AnyHashable.Type)!
-                        }
+        let typeErasedNonConformingStruct: Any = NonConformingStruct()
+        let structures: [AnyRuntimeModifiable] = [
+            ConformingStruct(), RuntimeModifiableBuilder.from(anyValue: typeErasedNonConformingStruct)
+        ]
+        typealias CaseTuple = (String, Any.Type, Any)
+        var testCases = [ExpectationType: [CaseTuple]]()
+        testCases[.read] = [("bool", Bool.self, true), ("string", String.self, "A"), ("number", Int.self, 1)]
+        testCases[.write] = [("bool", Bool.self, false), ("string", String.self, "B"), ("number", Int.self, 0)]
+        // testCases = testCases.sorted { $0.key > $1.key }
+        for var structure in structures {
+            currentObjectDescription = structure
+            print("- \(currentObjectDescription):")
+            for (testType, tupleList) in testCases {
+                currentTestType = testType
+                for testCase in tupleList {
+                    conductTest(
+                        member: testCase.0,
+                        type: testType,
+                        currentValue: structure.get(testCase.0, testCase.1 as? AnyHashable.Type)!,
+                        expectedValue: testCase.2 as? AnyHashable
+                    ) {
+                        structure.set(testCase.0, testCase.2)
+                        return structure.get(testCase.0, testCase.1 as? AnyHashable.Type)!
                     }
-                    structure.set("bool", true)
-                    structure.set("string", "A")
-                    structure.set("number", 1)
-                    print("\n")
                 }
+                structure.set("bool", true)
+                structure.set("string", "A")
+                structure.set("number", 1)
                 print("\n")
             }
-        } catch {}
+            print("\n")
+        }
         waitForExpectations(timeout: 5)
     }
 

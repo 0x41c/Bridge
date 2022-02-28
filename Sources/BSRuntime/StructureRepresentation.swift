@@ -8,7 +8,7 @@
 // TODO: Value witness tables (preferably a swift-only implementation)
 
 public protocol StructureRepresentation {
-    
+
     associatedtype InternalRepresentation
 
     ///
@@ -21,15 +21,6 @@ public protocol StructureRepresentation {
     /// The type that the metadata represents.
     ///
     var type: Any.Type { get }
-
-    ///
-    /// Initializes the representation of the metadata with a pointer
-    /// to it that is bound to the `MetadataStructure` associated type.
-    ///
-    /// - Parameters:
-    ///   - _: The pointer to the metadata that has been bound to `MetadataStructure`.
-    ///
-    init(`_`: UnsafeMutablePointer<InternalRepresentation>)
 
     ///
     /// Initializes the representation of the metadata with the type it's
@@ -49,7 +40,8 @@ public extension StructureRepresentation {
     }
 
     init(withType _type: Any.Type) {
-        self.init(`_`: swift_desanitizeMetadata(_type))
+        let internalRepresentation: UnsafeMutablePointer<InternalRepresentation> = swift_desanitizeMetadata(_type)
+        self = unsafeBitCast(internalRepresentation, to: Self.self)
     }
 
 }
