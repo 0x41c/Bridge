@@ -541,7 +541,7 @@ public func swift_checkMetadataState(
 ///   - secondContextDescriptor: The second context descriptor to compare.
 ///
 @_silgen_name("swift_compareTypeContextDescriptors")
-public func compareTypeContextDescriptors(
+public func swift_compareTypeContextDescriptors(
     _ firstContextDescriptor: UnsafeRawPointer,
     _ secondContextDescriptor: UnsafeRawPointer
 ) -> Bool
