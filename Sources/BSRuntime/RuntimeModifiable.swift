@@ -1,9 +1,27 @@
+// ===----------------------------------------------------------------------===
 //
 //  RuntimeModifiable.swift
 //  BSRuntime
 //
 //  Created by 0x41c on 2022-02-16.
 //
+// ===----------------------------------------------------------------------===
+//
+//  Copyright 2022 0x41c
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+// ===----------------------------------------------------------------------===
 
 import Foundation
 
@@ -114,6 +132,17 @@ public protocol RuntimeModifiable: AnyRuntimeModifiable {
     static var allKeyPaths: [String: PartialKeyPath<Self>] { get }
 
     ///
+    /// An ordered version of all the keypaths belonging to the structure.
+    ///
+    /// Every variable marked with `let` or `var` wil be included in this list. However,
+    /// computed variables are not on the list as the API retreiving them doesn't have
+    /// enough metadata to do so.
+    ///
+    /// This will represent the order the values were declared in, from the top of the structure
+    /// to the bottom.
+    ///
+    static var allKeyPathsOrdered: [Int: (String, PartialKeyPath<Self>)] { get }
+    ///
     /// All the writable key paths belonging to the structure
     ///
     /// A filtered version of `allKeyPaths` that only includes ones that are castable
@@ -136,17 +165,25 @@ public protocol RuntimeModifiable: AnyRuntimeModifiable {
 public extension RuntimeModifiable {
 
     static var allKeyPaths: [String: PartialKeyPath<Self>] {
-        return getKeypaths(ofType: Self.self)
+        var ret = [String: PartialKeyPath<Self>]()
+        for (_, pair) in Self.allKeyPathsOrdered {
+            ret[pair.0] = pair.1
+        }
+        return ret
+    }
+    
+    static var allKeyPathsOrdered: [Int: (String, PartialKeyPath<Self>)] {
+        getKeypaths(ofType: Self.self)
     }
 
     var writableKeyPaths: [String: PartialKeyPath<Self>] {
-        return Self.allKeyPaths.filter { _, val in
+        Self.allKeyPaths.filter { _, val in
             String(describing: val).contains("WritableKeyPath")
         }
     }
 
     var readOnlyKeyPaths: [String: PartialKeyPath<Self>] {
-        return Self.allKeyPaths.filter { _, val in
+        Self.allKeyPaths.filter { _, val in
             !String(describing: val).contains("WritableKeyPath")
         }
     }
@@ -199,7 +236,25 @@ struct ProxiedRuntimeModifiable<T>: AnyRuntimeModifiable {
     /// enough metadata to do so.
     ///
     var allKeyPaths: [String: PartialKeyPath<T>] {
-        return getKeypaths(ofType: T.self)
+        var ret = [String: PartialKeyPath<T>]()
+        for (_, pair) in allKeyPathsOrdered {
+            ret[pair.0] = pair.1
+        }
+        return ret
+    }
+    
+    ///
+    /// An ordered version of all the keypaths belonging to the structure.
+    ///
+    /// Every variable marked with `let` or `var` wil be included in this list. However,
+    /// computed variables are not on the list as the API retreiving them doesn't have
+    /// enough metadata to do so.
+    ///
+    /// This will represent the order the values were declared in, from the top of the structure
+    /// to the bottom.
+    ///
+    var allKeyPathsOrdered: [Int: (String, PartialKeyPath<T>)] {
+        getKeypaths(ofType: T.self)
     }
 
     ///
@@ -210,7 +265,7 @@ struct ProxiedRuntimeModifiable<T>: AnyRuntimeModifiable {
     /// structure.
     ///
     var writableKeyPaths: [String: PartialKeyPath<T>] {
-        return allKeyPaths.filter { _, val in
+        allKeyPaths.filter { _, val in
             String(describing: val).contains("WritableKeyPath")
         }
     }
@@ -223,7 +278,7 @@ struct ProxiedRuntimeModifiable<T>: AnyRuntimeModifiable {
     /// structure.
     ///
     var readOnlyKeyPaths: [String: PartialKeyPath<T>] {
-        return allKeyPaths.filter { _, val in
+        allKeyPaths.filter { _, val in
             !String(describing: val).contains("WritableKeyPath")
         }
     }
@@ -304,11 +359,11 @@ internal struct _EachFieldOptions: OptionSet {
 ///
 private func getKeypaths<T>(
     ofType _type: T.Type
-) -> [String: PartialKeyPath<T>] {
-    var membersToKeyPaths = [String: PartialKeyPath<T>]()
+) -> [Int: (String, PartialKeyPath<T>)] {
+    var membersToKeyPaths = [Int: (String, PartialKeyPath<T>)]()
     var options: _EachFieldOptions = swift_isClassType(T.self) ? [.ignoreUnknown, .classType] : [.ignoreUnknown]
     _ = _forEachFieldWithKeyPath(of: T.self, options: &options) { name, keypath in
-        membersToKeyPaths[String(cString: name)] = keypath as PartialKeyPath
+        membersToKeyPaths[membersToKeyPaths.count] = (String(cString: name),  keypath as PartialKeyPath)
         return true
     }
     return membersToKeyPaths

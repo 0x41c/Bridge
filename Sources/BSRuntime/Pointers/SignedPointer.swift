@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
+//  SignedPointer.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-09.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,16 +23,15 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
+import ptrauth
 
-    public struct InternalRepresentation: InternalStructureBase {
-
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
+public struct SignedPointer<Pointee> {
+    
+    private let ptr: UnsafePointer<Pointee>
+    
+    public var stripped: UnsafePointer<Pointee> {
+        PointerAuthentication.strip(ptr, ptrauth_key_asda).assumingMemoryBound(to: Pointee.self)
     }
-
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
+    
 }
+

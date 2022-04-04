@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  TupleMetadata.swift
+//  ClassDescriptor.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,25 +23,13 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct TupleMetadata: TypeMetadata {
+// TODO: Complete this
 
+public struct ClassDescriptor: StructureRepresentation {
+    
     public struct InternalRepresentation: InternalStructureBase {
-
-        private var _kind: Int
-        private var _numberOfElements: Int
-        private var _labelsString: UnsafeMutablePointer<CChar>
-        private var _elementInfo: UnsafeMutablePointer<TupleElement>
-
+        
     }
-
-    public struct TupleElement {
-        var type: Any.Type
-        var offset: Int
-    }
-
+    
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var numberOfElements: Int { `_`.pointee.numberOfElements! }
-    public var labelsString: UnsafeMutablePointer<CChar> { `_`.pointee.labelsString! }
-    public var elementInfo: UnsafeMutablePointer<TupleElement> { `_`.pointee.elementInfo! }
 }

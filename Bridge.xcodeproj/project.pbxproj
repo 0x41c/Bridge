@@ -9,12 +9,12 @@
 /* Begin PBXAggregateTarget section */
 		"Bridge::BridgePackageTests::ProductTarget" /* BridgePackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_83 /* Build configuration list for PBXAggregateTarget "BridgePackageTests" */;
+			buildConfigurationList = OBJ_114 /* Build configuration list for PBXAggregateTarget "BridgePackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_86 /* PBXTargetDependency */,
-				OBJ_88 /* PBXTargetDependency */,
+				OBJ_117 /* PBXTargetDependency */,
+				OBJ_119 /* PBXTargetDependency */,
 			);
 			name = BridgePackageTests;
 			productName = BridgePackageTests;
@@ -22,65 +22,110 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_44 /* Core Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Core Functions.swift */; };
-		OBJ_46 /* Runtime Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Runtime Functions.swift */; };
-		OBJ_47 /* InternalStructureBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* InternalStructureBase.swift */; };
-		OBJ_48 /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ClassMetadata.swift */; };
-		OBJ_49 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* EnumMetadata.swift */; };
-		OBJ_50 /* FunctionMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* FunctionMetadata.swift */; };
-		OBJ_51 /* ProtocolMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ProtocolMetadata.swift */; };
-		OBJ_52 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* StructMetadata.swift */; };
-		OBJ_53 /* TupleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* TupleMetadata.swift */; };
-		OBJ_54 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* RuntimeModifiable.swift */; };
-		OBJ_55 /* StructureRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* StructureRepresentation.swift */; };
-		OBJ_62 /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* ClassMetadata.swift */; };
-		OBJ_63 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* RuntimeModifiable.swift */; };
-		OBJ_65 /* BSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BSRuntime::Product" /* BSRuntime.framework */; };
-		OBJ_72 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Bridge.swift */; };
-		OBJ_74 /* BSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BSRuntime::Product" /* BSRuntime.framework */; };
-		OBJ_81 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_93 /* keep.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* keep.swift */; };
-		OBJ_95 /* Bridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::Bridge::Product" /* Bridge.framework */; };
+		1D41C85027DD8C0B003515F6 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C84F27DD8C0B003515F6 /* EnumMetadata.swift */; };
+		1D41C85B27DD9817003515F6 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C85327DD97BB003515F6 /* StructMetadata.swift */; };
+		1D41C85F27DEE44D003515F6 /* ClassDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C85E27DEE44D003515F6 /* ClassDescriptor.swift */; };
+		1D41C86127DEEA09003515F6 /* TypeDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86027DEEA09003515F6 /* TypeDescriptor.swift */; };
+		1D41C86327DEEABF003515F6 /* ContextDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86227DEEABF003515F6 /* ContextDescriptor.swift */; };
+		1D41C86527DEF1B3003515F6 /* RelativePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86427DEF1B3003515F6 /* RelativePointer.swift */; };
+		OBJ_104 /* ReinterpretCast.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* ReinterpretCast.c */; };
+		OBJ_105 /* PointerAuth.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* PointerAuth.c */; };
+		OBJ_112 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_124 /* keep.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* keep.swift */; };
+		OBJ_126 /* Bridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::Bridge::Product" /* Bridge.framework */; };
+		OBJ_127 /* BSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BSRuntime::Product" /* BSRuntime.framework */; };
+		OBJ_128 /* BridgeC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BridgeC::Product" /* BridgeC.framework */; };
+		OBJ_57 /* Core Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Core Functions.swift */; };
+		OBJ_58 /* InternalStructureBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* InternalStructureBase.swift */; };
+		OBJ_59 /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* ClassMetadata.swift */; };
+		OBJ_60 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* EnumMetadata.swift */; };
+		OBJ_61 /* FunctionMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* FunctionMetadata.swift */; };
+		OBJ_62 /* ProtocolMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* ProtocolMetadata.swift */; };
+		OBJ_63 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* StructMetadata.swift */; };
+		OBJ_64 /* TupleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* TupleMetadata.swift */; };
+		OBJ_65 /* TypeMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* TypeMetadata.swift */; };
+		OBJ_66 /* ValueWitnessTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ValueWitnessTable.swift */; };
+		OBJ_67 /* PointerAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* PointerAuth.swift */; };
+		OBJ_68 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Extensions.swift */; };
+		OBJ_69 /* SignedPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* SignedPointer.swift */; };
+		OBJ_70 /* Runtime Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Runtime Functions.swift */; };
+		OBJ_71 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* RuntimeModifiable.swift */; };
+		OBJ_72 /* StructureRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* StructureRepresentation.swift */; };
+		OBJ_74 /* BridgeC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BridgeC::Product" /* BridgeC.framework */; };
+		OBJ_82 /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* ClassMetadata.swift */; };
+		OBJ_83 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* RuntimeModifiable.swift */; };
+		OBJ_85 /* BSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BSRuntime::Product" /* BSRuntime.framework */; };
+		OBJ_86 /* BridgeC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BridgeC::Product" /* BridgeC.framework */; };
+		OBJ_94 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Bridge.swift */; };
 		OBJ_96 /* BSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BSRuntime::Product" /* BSRuntime.framework */; };
+		OBJ_97 /* BridgeC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Bridge::BridgeC::Product" /* BridgeC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1DBA260227CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84527DD38D8003515F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Bridge::BridgeC";
+			remoteInfo = BridgeC;
+		};
+		1D41C84627DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Bridge::BSRuntime";
 			remoteInfo = BSRuntime;
 		};
-		1DBA260327CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84727DD38D8003515F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Bridge::BridgeC";
+			remoteInfo = BridgeC;
+		};
+		1D41C84827DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Bridge::BSRuntime";
 			remoteInfo = BSRuntime;
 		};
-		1DBA260427CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84927DD38D8003515F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Bridge::BridgeC";
+			remoteInfo = BridgeC;
+		};
+		1D41C84A27DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Bridge::Bridge";
 			remoteInfo = Bridge;
 		};
-		1DBA260527CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84B27DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Bridge::BSRuntime";
 			remoteInfo = BSRuntime;
 		};
-		1DBA260627CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84C27DD38D8003515F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Bridge::BridgeC";
+			remoteInfo = BridgeC;
+		};
+		1D41C84D27DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Bridge::BridgeTests";
 			remoteInfo = BridgeTests;
 		};
-		1DBA260727CC539600AFCC85 /* PBXContainerItemProxy */ = {
+		1D41C84E27DD38D8003515F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -90,43 +135,63 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1DBA260B27CC70DC00AFCC85 /* Unfinished list.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unfinished list.txt"; sourceTree = "<group>"; };
+		1D41C84F27DD8C0B003515F6 /* EnumMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMetadata.swift; sourceTree = "<group>"; };
+		1D41C85327DD97BB003515F6 /* StructMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMetadata.swift; sourceTree = "<group>"; };
+		1D41C85E27DEE44D003515F6 /* ClassDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDescriptor.swift; sourceTree = "<group>"; };
+		1D41C86027DEEA09003515F6 /* TypeDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDescriptor.swift; sourceTree = "<group>"; };
+		1D41C86227DEEABF003515F6 /* ContextDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextDescriptor.swift; sourceTree = "<group>"; };
+		1D41C86427DEF1B3003515F6 /* RelativePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativePointer.swift; sourceTree = "<group>"; };
 		"Bridge::BSRuntime::Product" /* BSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BSRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Bridge::BSRuntimeTests::Product" /* BSRuntimeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BSRuntimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Bridge::Bridge::Product" /* Bridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Bridge::BridgeC::Product" /* BridgeC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BridgeC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Bridge::BridgeTests::Product" /* BridgeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_12 /* Runtime Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime Functions.swift"; sourceTree = "<group>"; };
-		OBJ_14 /* InternalStructureBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalStructureBase.swift; sourceTree = "<group>"; };
-		OBJ_16 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
-		OBJ_17 /* EnumMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMetadata.swift; sourceTree = "<group>"; };
-		OBJ_18 /* FunctionMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionMetadata.swift; sourceTree = "<group>"; };
-		OBJ_19 /* ProtocolMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMetadata.swift; sourceTree = "<group>"; };
-		OBJ_20 /* StructMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMetadata.swift; sourceTree = "<group>"; };
-		OBJ_21 /* TupleMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleMetadata.swift; sourceTree = "<group>"; };
-		OBJ_22 /* RuntimeModifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeModifiable.swift; sourceTree = "<group>"; };
-		OBJ_23 /* StructureRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureRepresentation.swift; sourceTree = "<group>"; };
-		OBJ_25 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
-		OBJ_29 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
-		OBJ_30 /* RuntimeModifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeModifiable.swift; sourceTree = "<group>"; };
-		OBJ_32 /* keep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keep.swift; sourceTree = "<group>"; };
-		OBJ_38 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_10 /* InternalStructureBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalStructureBase.swift; sourceTree = "<group>"; };
+		OBJ_12 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
+		OBJ_13 /* EnumMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMetadata.swift; sourceTree = "<group>"; };
+		OBJ_14 /* FunctionMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionMetadata.swift; sourceTree = "<group>"; };
+		OBJ_15 /* ProtocolMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMetadata.swift; sourceTree = "<group>"; };
+		OBJ_16 /* StructMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMetadata.swift; sourceTree = "<group>"; };
+		OBJ_17 /* TupleMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleMetadata.swift; sourceTree = "<group>"; };
+		OBJ_18 /* TypeMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetadata.swift; sourceTree = "<group>"; };
+		OBJ_19 /* ValueWitnessTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueWitnessTable.swift; sourceTree = "<group>"; };
+		OBJ_20 /* PointerAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAuth.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		OBJ_23 /* SignedPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedPointer.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Runtime Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime Functions.swift"; sourceTree = "<group>"; };
+		OBJ_25 /* RuntimeModifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeModifiable.swift; sourceTree = "<group>"; };
+		OBJ_26 /* StructureRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureRepresentation.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		OBJ_30 /* ReinterpretCast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ReinterpretCast.c; sourceTree = "<group>"; };
+		OBJ_31 /* PointerAuth.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PointerAuth.c; sourceTree = "<group>"; };
+		OBJ_33 /* ReinterpretCast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReinterpretCast.h; sourceTree = "<group>"; };
+		OBJ_34 /* PointerAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointerAuth.h; sourceTree = "<group>"; };
+		OBJ_35 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/Corban/Desktop/development/Bridge/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap; sourceTree = "<group>"; };
+		OBJ_39 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
+		OBJ_40 /* RuntimeModifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeModifiable.swift; sourceTree = "<group>"; };
+		OBJ_42 /* keep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keep.swift; sourceTree = "<group>"; };
+		OBJ_49 /* wiki */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wiki; sourceTree = SOURCE_ROOT; };
+		OBJ_50 /* Unfinished list.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Unfinished list.txt"; sourceTree = "<group>"; };
+		OBJ_51 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* Core Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_56 /* Frameworks */ = {
+		OBJ_106 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_64 /* Frameworks */ = {
+		OBJ_125 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_65 /* BSRuntime.framework in Frameworks */,
+				OBJ_126 /* Bridge.framework in Frameworks */,
+				OBJ_127 /* BSRuntime.framework in Frameworks */,
+				OBJ_128 /* BridgeC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,107 +199,167 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_74 /* BSRuntime.framework in Frameworks */,
+				OBJ_74 /* BridgeC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_94 /* Frameworks */ = {
+		OBJ_84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_95 /* Bridge.framework in Frameworks */,
+				OBJ_85 /* BSRuntime.framework in Frameworks */,
+				OBJ_86 /* BridgeC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
 				OBJ_96 /* BSRuntime.framework in Frameworks */,
+				OBJ_97 /* BridgeC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_15 /* Metadata */ = {
+		1D41C85D27DEE42A003515F6 /* Descriptors */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_16 /* ClassMetadata.swift */,
-				OBJ_17 /* EnumMetadata.swift */,
-				OBJ_18 /* FunctionMetadata.swift */,
-				OBJ_19 /* ProtocolMetadata.swift */,
-				OBJ_20 /* StructMetadata.swift */,
-				OBJ_21 /* TupleMetadata.swift */,
+				1D41C85E27DEE44D003515F6 /* ClassDescriptor.swift */,
+				1D41C86027DEEA09003515F6 /* TypeDescriptor.swift */,
+				1D41C86227DEEABF003515F6 /* ContextDescriptor.swift */,
+			);
+			path = Descriptors;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				1D41C85D27DEE42A003515F6 /* Descriptors */,
+				OBJ_12 /* ClassMetadata.swift */,
+				OBJ_13 /* EnumMetadata.swift */,
+				OBJ_14 /* FunctionMetadata.swift */,
+				OBJ_15 /* ProtocolMetadata.swift */,
+				OBJ_16 /* StructMetadata.swift */,
+				OBJ_17 /* TupleMetadata.swift */,
+				OBJ_18 /* TypeMetadata.swift */,
+				OBJ_19 /* ValueWitnessTable.swift */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
 		};
-		OBJ_24 /* Bridge */ = {
+		OBJ_21 /* Pointers */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* Bridge.swift */,
+				OBJ_22 /* Extensions.swift */,
+				OBJ_23 /* SignedPointer.swift */,
+				1D41C86427DEF1B3003515F6 /* RelativePointer.swift */,
+			);
+			path = Pointers;
+			sourceTree = "<group>";
+		};
+		OBJ_27 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_28 /* Bridge.swift */,
 			);
 			name = Bridge;
 			path = Sources/Bridge;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_26 /* Tests */ = {
+		OBJ_29 /* BridgeC */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_27 /* BSRuntimeTests */,
-				OBJ_31 /* BridgeTests */,
+				OBJ_30 /* ReinterpretCast.c */,
+				OBJ_31 /* PointerAuth.c */,
+				OBJ_32 /* include */,
+			);
+			name = BridgeC;
+			path = Sources/BridgeC;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_32 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_33 /* ReinterpretCast.h */,
+				OBJ_34 /* PointerAuth.h */,
+				OBJ_35 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_36 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_37 /* BSRuntimeTests */,
+				OBJ_41 /* BridgeTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_27 /* BSRuntimeTests */ = {
+		OBJ_37 /* BSRuntimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_28 /* Metadata */,
-				OBJ_30 /* RuntimeModifiable.swift */,
+				OBJ_38 /* Metadata */,
+				OBJ_40 /* RuntimeModifiable.swift */,
 			);
 			name = BSRuntimeTests;
 			path = Tests/BSRuntimeTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_28 /* Metadata */ = {
+		OBJ_38 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_29 /* ClassMetadata.swift */,
+				OBJ_39 /* ClassMetadata.swift */,
+				1D41C85327DD97BB003515F6 /* StructMetadata.swift */,
+				1D41C84F27DD8C0B003515F6 /* EnumMetadata.swift */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
 		};
-		OBJ_31 /* BridgeTests */ = {
+		OBJ_41 /* BridgeTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_32 /* keep.swift */,
+				OBJ_42 /* keep.swift */,
 			);
 			name = BridgeTests;
 			path = Tests/BridgeTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_33 /* Products */ = {
+		OBJ_43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"Bridge::BSRuntime::Product" /* BSRuntime.framework */,
 				"Bridge::BSRuntimeTests::Product" /* BSRuntimeTests.xctest */,
 				"Bridge::Bridge::Product" /* Bridge.framework */,
+				"Bridge::BridgeC::Product" /* BridgeC.framework */,
 				"Bridge::BridgeTests::Product" /* BridgeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
-				OBJ_38 /* README.md */,
 				OBJ_7 /* Sources */,
-				OBJ_26 /* Tests */,
-				OBJ_33 /* Products */,
+				OBJ_36 /* Tests */,
+				OBJ_43 /* Products */,
+				OBJ_49 /* wiki */,
+				OBJ_50 /* Unfinished list.txt */,
+				OBJ_51 /* README.md */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* BSRuntime */,
-				OBJ_24 /* Bridge */,
+				OBJ_27 /* Bridge */,
+				OBJ_29 /* BridgeC */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -242,13 +367,14 @@
 		OBJ_8 /* BSRuntime */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* Metadata */,
+				OBJ_21 /* Pointers */,
+				OBJ_11 /* Metadata */,
 				OBJ_9 /* Core Functions.swift */,
-				OBJ_12 /* Runtime Functions.swift */,
-				OBJ_14 /* InternalStructureBase.swift */,
-				OBJ_22 /* RuntimeModifiable.swift */,
-				OBJ_23 /* StructureRepresentation.swift */,
-				1DBA260B27CC70DC00AFCC85 /* Unfinished list.txt */,
+				OBJ_10 /* InternalStructureBase.swift */,
+				OBJ_20 /* PointerAuth.swift */,
+				OBJ_24 /* Runtime Functions.swift */,
+				OBJ_25 /* RuntimeModifiable.swift */,
+				OBJ_26 /* StructureRepresentation.swift */,
 			);
 			name = BSRuntime;
 			path = Sources/BSRuntime;
@@ -259,15 +385,15 @@
 /* Begin PBXNativeTarget section */
 		"Bridge::BSRuntime" /* BSRuntime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_40 /* Build configuration list for PBXNativeTarget "BSRuntime" */;
+			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "BSRuntime" */;
 			buildPhases = (
-				1DBA260A27CC541400AFCC85 /* ShellScript */,
-				OBJ_43 /* Sources */,
-				OBJ_56 /* Frameworks */,
+				OBJ_56 /* Sources */,
+				OBJ_73 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				OBJ_75 /* PBXTargetDependency */,
 			);
 			name = BSRuntime;
 			productName = BSRuntime;
@@ -276,15 +402,16 @@
 		};
 		"Bridge::BSRuntimeTests" /* BSRuntimeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_58 /* Build configuration list for PBXNativeTarget "BSRuntimeTests" */;
+			buildConfigurationList = OBJ_78 /* Build configuration list for PBXNativeTarget "BSRuntimeTests" */;
 			buildPhases = (
-				OBJ_61 /* Sources */,
-				OBJ_64 /* Frameworks */,
+				OBJ_81 /* Sources */,
+				OBJ_84 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_66 /* PBXTargetDependency */,
+				OBJ_87 /* PBXTargetDependency */,
+				OBJ_88 /* PBXTargetDependency */,
 			);
 			name = BSRuntimeTests;
 			productName = BSRuntimeTests;
@@ -293,33 +420,51 @@
 		};
 		"Bridge::Bridge" /* Bridge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_68 /* Build configuration list for PBXNativeTarget "Bridge" */;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "Bridge" */;
 			buildPhases = (
-				OBJ_71 /* Sources */,
-				OBJ_73 /* Frameworks */,
+				OBJ_93 /* Sources */,
+				OBJ_95 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_75 /* PBXTargetDependency */,
+				OBJ_98 /* PBXTargetDependency */,
+				OBJ_99 /* PBXTargetDependency */,
 			);
 			name = Bridge;
 			productName = Bridge;
 			productReference = "Bridge::Bridge::Product" /* Bridge.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"Bridge::BridgeTests" /* BridgeTests */ = {
+		"Bridge::BridgeC" /* BridgeC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_89 /* Build configuration list for PBXNativeTarget "BridgeTests" */;
+			buildConfigurationList = OBJ_100 /* Build configuration list for PBXNativeTarget "BridgeC" */;
 			buildPhases = (
-				OBJ_92 /* Sources */,
-				OBJ_94 /* Frameworks */,
+				OBJ_103 /* Sources */,
+				OBJ_106 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_97 /* PBXTargetDependency */,
-				OBJ_98 /* PBXTargetDependency */,
+			);
+			name = BridgeC;
+			productName = BridgeC;
+			productReference = "Bridge::BridgeC::Product" /* BridgeC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Bridge::BridgeTests" /* BridgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_120 /* Build configuration list for PBXNativeTarget "BridgeTests" */;
+			buildPhases = (
+				OBJ_123 /* Sources */,
+				OBJ_125 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_129 /* PBXTargetDependency */,
+				OBJ_130 /* PBXTargetDependency */,
+				OBJ_131 /* PBXTargetDependency */,
 			);
 			name = BridgeTests;
 			productName = BridgeTests;
@@ -328,9 +473,9 @@
 		};
 		"Bridge::SwiftPMPackageDescription" /* BridgePackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_77 /* Build configuration list for PBXNativeTarget "BridgePackageDescription" */;
+			buildConfigurationList = OBJ_108 /* Build configuration list for PBXNativeTarget "BridgePackageDescription" */;
 			buildPhases = (
-				OBJ_80 /* Sources */,
+				OBJ_111 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -356,14 +501,15 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_33 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				"Bridge::BSRuntime" /* BSRuntime */,
 				"Bridge::BSRuntimeTests" /* BSRuntimeTests */,
 				"Bridge::Bridge" /* Bridge */,
+				"Bridge::BridgeC" /* BridgeC */,
 				"Bridge::SwiftPMPackageDescription" /* BridgePackageDescription */,
 				"Bridge::BridgePackageTests::ProductTarget" /* BridgePackageTests */,
 				"Bridge::BridgeTests" /* BridgeTests */,
@@ -371,114 +517,292 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1DBA260A27CC541400AFCC85 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_43 /* Sources */ = {
+		OBJ_103 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_44 /* Core Functions.swift in Sources */,
-				OBJ_46 /* Runtime Functions.swift in Sources */,
-				OBJ_47 /* InternalStructureBase.swift in Sources */,
-				OBJ_48 /* ClassMetadata.swift in Sources */,
-				OBJ_49 /* EnumMetadata.swift in Sources */,
-				OBJ_50 /* FunctionMetadata.swift in Sources */,
-				OBJ_51 /* ProtocolMetadata.swift in Sources */,
-				OBJ_52 /* StructMetadata.swift in Sources */,
-				OBJ_53 /* TupleMetadata.swift in Sources */,
-				OBJ_54 /* RuntimeModifiable.swift in Sources */,
-				OBJ_55 /* StructureRepresentation.swift in Sources */,
+				OBJ_104 /* ReinterpretCast.c in Sources */,
+				OBJ_105 /* PointerAuth.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_61 /* Sources */ = {
+		OBJ_111 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_62 /* ClassMetadata.swift in Sources */,
-				OBJ_63 /* RuntimeModifiable.swift in Sources */,
+				OBJ_112 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_71 /* Sources */ = {
+		OBJ_123 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_72 /* Bridge.swift in Sources */,
+				OBJ_124 /* keep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_80 /* Sources */ = {
+		OBJ_56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_81 /* Package.swift in Sources */,
+				OBJ_57 /* Core Functions.swift in Sources */,
+				OBJ_58 /* InternalStructureBase.swift in Sources */,
+				OBJ_59 /* ClassMetadata.swift in Sources */,
+				OBJ_60 /* EnumMetadata.swift in Sources */,
+				1D41C86327DEEABF003515F6 /* ContextDescriptor.swift in Sources */,
+				1D41C86527DEF1B3003515F6 /* RelativePointer.swift in Sources */,
+				OBJ_61 /* FunctionMetadata.swift in Sources */,
+				OBJ_62 /* ProtocolMetadata.swift in Sources */,
+				OBJ_63 /* StructMetadata.swift in Sources */,
+				1D41C85F27DEE44D003515F6 /* ClassDescriptor.swift in Sources */,
+				OBJ_64 /* TupleMetadata.swift in Sources */,
+				OBJ_65 /* TypeMetadata.swift in Sources */,
+				OBJ_66 /* ValueWitnessTable.swift in Sources */,
+				OBJ_67 /* PointerAuth.swift in Sources */,
+				1D41C86127DEEA09003515F6 /* TypeDescriptor.swift in Sources */,
+				OBJ_68 /* Extensions.swift in Sources */,
+				OBJ_69 /* SignedPointer.swift in Sources */,
+				OBJ_70 /* Runtime Functions.swift in Sources */,
+				OBJ_71 /* RuntimeModifiable.swift in Sources */,
+				OBJ_72 /* StructureRepresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_92 /* Sources */ = {
+		OBJ_81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_93 /* keep.swift in Sources */,
+				OBJ_82 /* ClassMetadata.swift in Sources */,
+				1D41C85B27DD9817003515F6 /* StructMetadata.swift in Sources */,
+				1D41C85027DD8C0B003515F6 /* EnumMetadata.swift in Sources */,
+				OBJ_83 /* RuntimeModifiable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_94 /* Bridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_66 /* PBXTargetDependency */ = {
+		OBJ_117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Bridge::BridgeTests" /* BridgeTests */;
+			targetProxy = 1D41C84D27DD38D8003515F6 /* PBXContainerItemProxy */;
+		};
+		OBJ_119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Bridge::BSRuntimeTests" /* BSRuntimeTests */;
+			targetProxy = 1D41C84E27DD38D8003515F6 /* PBXContainerItemProxy */;
+		};
+		OBJ_129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Bridge::Bridge" /* Bridge */;
+			targetProxy = 1D41C84A27DD38D8003515F6 /* PBXContainerItemProxy */;
+		};
+		OBJ_130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Bridge::BSRuntime" /* BSRuntime */;
-			targetProxy = 1DBA260327CC539600AFCC85 /* PBXContainerItemProxy */;
+			targetProxy = 1D41C84B27DD38D8003515F6 /* PBXContainerItemProxy */;
+		};
+		OBJ_131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Bridge::BridgeC" /* BridgeC */;
+			targetProxy = 1D41C84C27DD38D8003515F6 /* PBXContainerItemProxy */;
 		};
 		OBJ_75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "Bridge::BSRuntime" /* BSRuntime */;
-			targetProxy = 1DBA260227CC539600AFCC85 /* PBXContainerItemProxy */;
+			target = "Bridge::BridgeC" /* BridgeC */;
+			targetProxy = 1D41C84527DD38D8003515F6 /* PBXContainerItemProxy */;
 		};
-		OBJ_86 /* PBXTargetDependency */ = {
+		OBJ_87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "Bridge::BridgeTests" /* BridgeTests */;
-			targetProxy = 1DBA260627CC539600AFCC85 /* PBXContainerItemProxy */;
+			target = "Bridge::BSRuntime" /* BSRuntime */;
+			targetProxy = 1D41C84827DD38D8003515F6 /* PBXContainerItemProxy */;
 		};
 		OBJ_88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "Bridge::BSRuntimeTests" /* BSRuntimeTests */;
-			targetProxy = 1DBA260727CC539600AFCC85 /* PBXContainerItemProxy */;
-		};
-		OBJ_97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Bridge::Bridge" /* Bridge */;
-			targetProxy = 1DBA260427CC539600AFCC85 /* PBXContainerItemProxy */;
+			target = "Bridge::BridgeC" /* BridgeC */;
+			targetProxy = 1D41C84927DD38D8003515F6 /* PBXContainerItemProxy */;
 		};
 		OBJ_98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Bridge::BSRuntime" /* BSRuntime */;
-			targetProxy = 1DBA260527CC539600AFCC85 /* PBXContainerItemProxy */;
+			targetProxy = 1D41C84627DD38D8003515F6 /* PBXContainerItemProxy */;
+		};
+		OBJ_99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Bridge::BridgeC" /* BridgeC */;
+			targetProxy = 1D41C84727DD38D8003515F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		OBJ_101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+				);
+				INFOPLIST_FILE = Bridge.xcodeproj/BridgeC_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = BridgeC;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = BridgeC;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+				);
+				INFOPLIST_FILE = Bridge.xcodeproj/BridgeC_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = BridgeC;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = BridgeC;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_109 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_116 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
+				INFOPLIST_FILE = Bridge.xcodeproj/BridgeTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = BridgeTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		OBJ_122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
+				INFOPLIST_FILE = Bridge.xcodeproj/BridgeTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = BridgeTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,7 +856,7 @@
 			};
 			name = Release;
 		};
-		OBJ_41 /* Debug */ = {
+		OBJ_54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
@@ -542,14 +866,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/BSRuntime_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = BSRuntime;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -562,7 +890,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_42 /* Release */ = {
+		OBJ_55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
@@ -572,14 +900,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/BSRuntime_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = BSRuntime;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -592,7 +924,7 @@
 			};
 			name = Release;
 		};
-		OBJ_59 /* Debug */ = {
+		OBJ_79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -603,14 +935,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/BSRuntimeTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = BSRuntimeTests;
@@ -619,7 +955,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_60 /* Release */ = {
+		OBJ_80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -630,14 +966,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/BSRuntimeTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = BSRuntimeTests;
@@ -646,7 +986,7 @@
 			};
 			name = Release;
 		};
-		OBJ_69 /* Debug */ = {
+		OBJ_91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
@@ -656,14 +996,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/Bridge_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = Bridge;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -676,7 +1020,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_70 /* Release */ = {
+		OBJ_92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
@@ -686,14 +1030,18 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/BridgeC/include",
+					"$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC",
+				);
 				INFOPLIST_FILE = Bridge.xcodeproj/Bridge_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Bridge.xcodeproj/GeneratedModuleMap/BridgeC/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = Bridge;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -703,96 +1051,48 @@
 				TARGET_NAME = Bridge;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		OBJ_78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_84 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		OBJ_90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Bridge.xcodeproj/BridgeTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = BridgeTests;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Debug;
-		};
-		OBJ_91 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Bridge.xcodeproj/BridgeTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = BridgeTests;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		OBJ_100 /* Build configuration list for PBXNativeTarget "BridgeC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_101 /* Debug */,
+				OBJ_102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_108 /* Build configuration list for PBXNativeTarget "BridgePackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_109 /* Debug */,
+				OBJ_110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_114 /* Build configuration list for PBXAggregateTarget "BridgePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_115 /* Debug */,
+				OBJ_116 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_120 /* Build configuration list for PBXNativeTarget "BridgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_121 /* Debug */,
+				OBJ_122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		OBJ_2 /* Build configuration list for PBXProject "Bridge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -802,56 +1102,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_40 /* Build configuration list for PBXNativeTarget "BSRuntime" */ = {
+		OBJ_53 /* Build configuration list for PBXNativeTarget "BSRuntime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_41 /* Debug */,
-				OBJ_42 /* Release */,
+				OBJ_54 /* Debug */,
+				OBJ_55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_58 /* Build configuration list for PBXNativeTarget "BSRuntimeTests" */ = {
+		OBJ_78 /* Build configuration list for PBXNativeTarget "BSRuntimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_59 /* Debug */,
-				OBJ_60 /* Release */,
+				OBJ_79 /* Debug */,
+				OBJ_80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_68 /* Build configuration list for PBXNativeTarget "Bridge" */ = {
+		OBJ_90 /* Build configuration list for PBXNativeTarget "Bridge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_69 /* Debug */,
-				OBJ_70 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_77 /* Build configuration list for PBXNativeTarget "BridgePackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_78 /* Debug */,
-				OBJ_79 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_83 /* Build configuration list for PBXAggregateTarget "BridgePackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_84 /* Debug */,
-				OBJ_85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_89 /* Build configuration list for PBXNativeTarget "BridgeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_90 /* Debug */,
-				OBJ_91 /* Release */,
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

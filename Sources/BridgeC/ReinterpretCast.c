@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
+//  ReinterpretCast.c
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-09.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -22,17 +22,17 @@
 //  limitations under the License.
 //
 // ===----------------------------------------------------------------------===
+//
+//   Hook into this function whenever you need to bypass asan
+//   for out-of-bounds casting. To hook this, use @_silgen_name
+//   and create a custom signature for this. During runtime, it should
+//   use the signature and perfom basically a reinterpretCast
+//   on the passthrough value.
+//
+// ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
+#include "include/ReinterpretCast.h"
 
-    public struct InternalRepresentation: InternalStructureBase {
-
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
-    }
-
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
+uintptr_t swift_reinterpretCast(uintptr_t pointer) {
+    return pointer;
 }

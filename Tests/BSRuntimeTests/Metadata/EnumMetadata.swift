@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
 //  EnumMetadata.swift
-//  BSRuntime
+//  BSRuntimeTests
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-12.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,16 +23,33 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+import XCTest
+@testable import BSRuntime
 
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
+enum Cool {
+    case One
+}
+
+enum Cool2 {
+    case One
+    case Two
+}
+
+
+enum Cool3 {
+    case One
+    case Two
+    case Three
+}
+
+class EnumMetadataTests: XCTestCase {
+    func testCasting() {
+        let enumTypes: [Any.Type] = [
+            Cool.self, Cool2.self, Cool3.self
+        ]
+        for enumType in enumTypes {
+            print(EnumMetadata(withType: enumType))
+        }
     }
-
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
 }

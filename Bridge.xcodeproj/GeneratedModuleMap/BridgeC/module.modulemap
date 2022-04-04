@@ -1,0 +1,4 @@
+module BridgeC {
+    umbrella "/Users/Corban/Desktop/development/Bridge/Sources/BridgeC/include"
+    export *
+}

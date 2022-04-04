@@ -1,0 +1,4 @@
+module BSRuntimeCImports {
+    umbrella "/Users/Corban/Desktop/development/Bridge/Sources/BSRuntimeCImports/include"
+    export *
+}

@@ -1,11 +1,29 @@
+// ===----------------------------------------------------------------------===
 //
 //  ClassMetadata.swift
 //  BSRuntime
 //
 //  Created by 0x41c on 2022-02-25.
 //
+// ===----------------------------------------------------------------------===
+//
+//  Copyright 2022 0x41c
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+// ===----------------------------------------------------------------------===
 
-public struct ClassMetadata: StructureRepresentation {
+public struct ClassMetadata: TypeMetadata {
 
     public struct InternalRepresentation: InternalStructureBase {
 
@@ -22,13 +40,13 @@ public struct ClassMetadata: StructureRepresentation {
         private var _runtimeReservedField: UInt16
         private var _classObjectSize: UInt32
         private var _classObjectAddressPoint: UInt32
-        private var _nominalTypeDescriptor: UnsafeRawPointer // TODO: This is a signed pointer.
-        private var _ivarDestroyer: UnsafeRawPointer
+        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // ClassTypeContextDescriptor
+        private var _ivarDestroyer: UnsafeRawPointer? // If this pointer is to 0x0 we don't want to access it.
 
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: Int { `_`.pointee.kind! }
+    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
     public var superclass: Any.Type? { `_`.pointee.superclass! }
     #if swift(>=5.4) || canImport(ObjectiveC)
     public var reserved: (Int, Int) { `_`.pointee.reserved! }
@@ -41,7 +59,7 @@ public struct ClassMetadata: StructureRepresentation {
     public var runtimeReservedField: UInt16 { `_`.pointee.runtimeReservedField! }
     public var classObjectSize: UInt32 { `_`.pointee.classObjectSize! }
     public var classObjectAddressPoint: UInt32 { `_`.pointee.classObjectAddressPoint! }
-    public var nominalTypeDescriptor: UnsafeRawPointer { `_`.pointee.nominalTypeDescriptor! }
-    public var ivarDestroyer: UnsafeRawPointer { `_`.pointee.ivarDestroyer! }
+    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
+    public var ivarDestroyer: UnsafeRawPointer? { `_`.pointee.ivarDestroyer }
 
 }

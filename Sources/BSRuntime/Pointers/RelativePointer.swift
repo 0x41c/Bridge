@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
+//  RelativePointer.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,16 +23,12 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
-
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
+struct RelativePointer<Offset: FixedWidthInteger, Pointee> {
+    private var _offset: Offset
+    
+    var offset: UnsafePointer<Pointee> {
+        _autoReinterpretCast(self).offset(by: Int(_offset))
     }
-
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
 }
+

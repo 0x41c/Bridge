@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
+//  ContextDescriptor.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,16 +23,49 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
 
+public struct ContextDescriptor: StructureRepresentation {
+    
     public struct InternalRepresentation: InternalStructureBase {
-
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
+        private var _flags: UInt32
     }
-
+    
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
+}
 
+public extension ContextDescriptor {
+    
+    struct Flags: OptionSet {
+        
+        public var rawValue: UInt32
+        
+        static let unique = Flags(rawValue: 1 << 6)
+        static let generic = Flags(rawValue: 1 << 7)
+        
+        public var kind: Kind {
+            Kind(rawValue: Int(rawValue) & 0x1F)!
+        }
+        
+        public init(rawValue: UInt32) {
+            self.rawValue = rawValue
+        }
+        
+    }
+}
+
+public extension ContextDescriptor {
+    
+    enum Kind: Int {
+        
+        case module = 0
+        case `extension` = 1
+        case anonymous = 2
+        case `protocol` = 3
+        case opaqueType = 4
+        case `class` = 16
+        case `struct` = 17
+        case `enum` = 18
+        
+    }
+    
 }

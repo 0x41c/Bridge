@@ -15,7 +15,13 @@ let package = Package(
                 .target(name: "BSRuntime")
             ]
         ),
-        .target(name: "BSRuntime"),
+        .target(
+            name: "BSRuntime",
+            dependencies: [
+                .target(name: "BridgeC")
+            ]
+        ),
+        .target(name: "BridgeC"),
         .testTarget(
             name: "BridgeTests",
             dependencies: ["Bridge"]),

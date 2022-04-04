@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
-//  BSRuntime
+//  ReinterpretCast.h
+//  Bridge
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-03-09.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,16 +23,11 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
+#import <stdint.h>
 
-    public struct InternalRepresentation: InternalStructureBase {
+#ifndef AsanBypass_h
+#define AsanBypass_h
 
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // EnumTypeContextDescriptor
-    }
+uintptr_t swift_reinterpretCast(uintptr_t pointer);
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
-}
+#endif /* AsanBypass_h */
