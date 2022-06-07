@@ -33,32 +33,14 @@ public protocol StructureRepresentation: CustomStringConvertible {
     ///
     var `_`: UnsafeMutablePointer<InternalRepresentation> { get }
 
-    ///
-    /// The type that the metadata represents.
-    ///
-    var type: Any.Type { get }
-
-    ///
-    /// Initializes the representation of the metadata with the type it's
-    /// representing.
-    ///
-    /// - Parameters:
-    ///   - _type: The type to represent the metadata of.
-    ///
-    init(withType _type: Any.Type)
-
 }
 
 public extension StructureRepresentation {
-
-    var type: Any.Type {
-        unsafeBitCast(`_`, to: Any.Type.self)
+    
+    init(withStructure structure: UnsafeMutablePointer<InternalRepresentation>) {
+        self = _autoReinterpretCast(structure).mutating.pointee
     }
-
-    init(withType _type: Any.Type) {
-        self = _autoReinterpretCast(_type).mutating.pointee
-    }
-
+    
 }
 
 public extension StructureRepresentation where InternalRepresentation: InternalStructureBase {
@@ -68,6 +50,10 @@ public extension StructureRepresentation where InternalRepresentation: InternalS
         for i in 0..<InternalRepresentation.allKeyPathsOrdered.count {
             let pair = InternalRepresentation.allKeyPathsOrdered[i]!
             let key = pair.0
+            
+            // This suffers an issue where it will crash on accessing a structure invalidly.
+            // The reason for the crash can be trivial however, so in the future, we should
+            // consider creating an issue on the swift repo to fix it.
             retString.append("\n  \(key): \(`_`.pointee[keyPath: pair.1]),")
         }
         retString.append("\n)")

@@ -30,8 +30,30 @@ public protocol TypeMetadata: StructureRepresentation {
 
 
 public extension TypeMetadata {
+    
+    ///
+    /// The type that the metadata represents.
+    ///
+    var type: Any.Type {
+        unsafeBitCast(`_`, to: Any.Type.self)
+    }
+    
+    ///
+    /// The types VWT located right before the base of the type structure.
+    ///
     var valueWitnessTable: ValueWitnessTable {
         `_`.raw.offset(by: -1).assumingMemoryBound(to: ValueWitnessTable.self).pointee
+    }
+    
+    ///
+    /// Initializes the representation of the metadata with the type it's
+    /// representing.
+    ///
+    /// - Parameters:
+    ///   - _type: The type to represent the metadata of.
+    ///
+    init(withType _type: Any.Type) {
+        self = _autoReinterpretCast(_type).mutating.pointee
     }
 }
 

@@ -31,6 +31,7 @@ public struct ContextDescriptor: StructureRepresentation {
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var flags: Flags { Flags(rawValue: `_`.pointee.flags!) }
 }
 
 public extension ContextDescriptor {

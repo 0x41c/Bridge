@@ -40,8 +40,8 @@ final class ClassMetadataTests: XCTestCase {
         for `class` in classes {
             // This accesses `_` which will crash if it got messed up. Allows me to spot it faster XD
             let md = ClassMetadata(withType: `class`)
-//            print(md)
-//            print(md.nominalTypeDescriptor.stripped.pointee) // Crashes for now
+            print(md)
+            print(md.nominalTypeDescriptor)
         }
     }
 

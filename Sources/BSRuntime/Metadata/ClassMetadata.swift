@@ -40,7 +40,7 @@ public struct ClassMetadata: TypeMetadata {
         private var _runtimeReservedField: UInt16
         private var _classObjectSize: UInt32
         private var _classObjectAddressPoint: UInt32
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // ClassTypeContextDescriptor
+        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor.InternalRepresentation> // ClassTypeContextDescriptor
         private var _ivarDestroyer: UnsafeRawPointer? // If this pointer is to 0x0 we don't want to access it.
 
     }
@@ -59,7 +59,12 @@ public struct ClassMetadata: TypeMetadata {
     public var runtimeReservedField: UInt16 { `_`.pointee.runtimeReservedField! }
     public var classObjectSize: UInt32 { `_`.pointee.classObjectSize! }
     public var classObjectAddressPoint: UInt32 { `_`.pointee.classObjectAddressPoint! }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
+    
+    public var nominalTypeDescriptor: ContextDescriptor {
+        let signedPtr: SignedPointer<ContextDescriptor.InternalRepresentation> = `_`.pointee.nominalTypeDescriptor!
+        return ContextDescriptor(withStructure: signedPtr.stripped.mutating)
+    }
+    
     public var ivarDestroyer: UnsafeRawPointer? { `_`.pointee.ivarDestroyer }
 
 }
