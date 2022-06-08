@@ -46,4 +46,4 @@ public struct TupleMetadata: TypeMetadata {
     public var elementInfo: UnsafeMutablePointer<TupleElement> { `_`.pointee.elementInfo! }
 }
 
-public extension TupleMetadata: Equatable {}
+extension TupleMetadata: Equatable {}

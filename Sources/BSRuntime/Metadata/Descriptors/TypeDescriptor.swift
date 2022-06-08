@@ -23,7 +23,7 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct TypeDescriptor: StructureRepresentation {
+public struct TypeDescriptor: AnyContextDescriptor, StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
         private var _base: ContextDescriptor.InternalRepresentation
@@ -55,7 +55,7 @@ public extension TypeDescriptor {
     
     struct Flags: OptionSet {
         
-        var rawValue: UInt64
+        public var rawValue: UInt64
         
         static var hasImportInfo = Flags(rawValue: 1 << 4)
         static var classHasNegativeImmediateMembers = Flags(rawValue: 1 << 0x1000)
@@ -65,6 +65,10 @@ public extension TypeDescriptor {
         
         public var resilientSuperclassRefKind: TypeReferenceKind {
             TypeReferenceKind(rawValue: UInt16(rawValue) & 0xE00)!
+        }
+        
+        public init(rawValue: UInt64) {
+            self.rawValue = rawValue
         }
         
     }
@@ -78,4 +82,4 @@ public extension TypeDescriptor {
     
 }
 
-public extension TypeDescriptor: Equatable {}
+extension TypeDescriptor: Equatable {}

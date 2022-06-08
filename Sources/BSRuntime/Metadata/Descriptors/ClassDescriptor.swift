@@ -25,7 +25,7 @@
 
 // TODO: Complete this
 
-public struct ClassDescriptor: StructureRepresentation {
+public struct ClassDescriptor: AnyContextDescriptor, StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
         
@@ -55,4 +55,4 @@ public struct ClassDescriptor: StructureRepresentation {
     public var fieldOffsetVectorOffset: UInt32 { `_`.pointee.fieldOffsetVectorOffset! }
 }
 
-public extension ClassDescriptor: Equatable {}
+extension ClassDescriptor: Equatable {}

@@ -162,7 +162,7 @@ public extension ValueWitnessTable {
     }
 }
 
-public extension ValueWitnessTable: Equatable {}
+extension ValueWitnessTable: Equatable {}
 
 
 // _initializeBufferWithCopyOfBuffer

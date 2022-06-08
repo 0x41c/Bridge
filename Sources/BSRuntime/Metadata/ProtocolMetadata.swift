@@ -42,4 +42,4 @@ public struct ProtocolMetadata: TypeMetadata {
 
 }
 
-public extension ProtocolMetadata: Equatable {}
+extension ProtocolMetadata: Equatable {}

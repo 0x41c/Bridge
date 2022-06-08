@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  StructMetadata.swift
+//  ExistentialMetadata.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-06-08.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,19 +23,31 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct StructMetadata: TypeMetadata {
 
+public struct ExistentialMetadata: StructureRepresentation {
+    
     public struct InternalRepresentation: InternalStructureBase {
-
+        
         private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor>
-
+        private var _flags: Flags
+        private var _numProtos: UInt32
+        
     }
-
+    
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
-
+    public var flags: Flags { `_`.pointee.flags! }
+    
 }
 
-extension StructMetadata: Equatable {}
+public extension ExistentialMetadata {
+    
+    struct Flags: OptionSet {
+        
+        public var rawValue: UInt32
+        
+        public init(rawValue: UInt32) {
+            self.rawValue = rawValue
+        }
+    }
+    
+}

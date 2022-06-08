@@ -40,4 +40,4 @@ public struct FunctionMetadata: TypeMetadata {
 
 }
 
-public extension FunctionMetadata: Equatable {}
+extension FunctionMetadata: Equatable {}

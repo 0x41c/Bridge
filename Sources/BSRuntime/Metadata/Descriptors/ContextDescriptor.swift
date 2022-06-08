@@ -25,24 +25,56 @@
 
 import ptrauth
 
-public struct ContextDescriptor: StructureRepresentation {
+public protocol AnyContextDescriptor {
+    
+    var flags: ContextDescriptor.Flags { get }
+    
+}
+
+extension AnyContextDescriptor {
+    
+    public var flags: ContextDescriptor.Flags { _autoReinterpretCast(self).pointee }
+    
+    // TODO: Module
+    // TODO: Extension
+    
+    public var anonymousDescriptor: ContextDescriptor { checkKind(.anonymous)
+        return _autoReinterpretCast(self).pointee
+    }
+    
+    // TODO: Protocol
+    
+    public var classDescriptor: ClassDescriptor { checkKind(.class)
+        return _autoReinterpretCast(self).pointee
+    }
+    
+    // TODO: Struct
+    // TODO: Enum
+    
+    
+    private func checkKind(_ kind: ContextDescriptor.Kind) {
+        guard flags.kind == kind else {
+            fatalError("Tried to get \(kind) descriptor from descriptor of kind \"\(flags.kind)\"")
+        }
+    }
+}
+
+public struct ContextDescriptor: AnyContextDescriptor, StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
-        private var _flags: UInt32
+        private var _flags: Flags
         private var _parent: RelativePointer<Int32, InternalRepresentation>
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var flags: Flags { Flags(rawValue: `_`.pointee.flags!) }
     
-    public var parent: ContextDescriptor? {
-        let _parent: RelativePointer<Int32, InternalRepresentation> = `_`.pointee.parent!
+    public var parent: AnyContextDescriptor? {
+        let _parent: RelativePointer<Int32, Void> = `_`.pointee.parent!
         if _parent.isNull {
             return nil
         }
         
-        return getContextDescriptor(from: _parent.indirectOffset.raw)
-        
+        return _autoReinterpretCast(_parent.directOffset).pointee
     }
 }
 
@@ -91,20 +123,12 @@ public extension ContextDescriptor {
     
 }
 
-public extension ContextDescriptor: Equatable {}
+extension ContextDescriptor: Equatable {}
 
 
 func getContextDescriptor(
     from pointer: UnsafeRawPointer
-) -> ContextDescriptor {
-    let pointer = PointerAuthentication.strip(pointer, ptrauth_key_asda)
-    let flags = pointer.load(as: ContextDescriptor.Flags.self)
-    
-    switch flags.kind { // TODO: Implement the rest.
-    case .class:
-        return ClassDescriptor(withPointer: pointer)
-    default:
-        fatalError("Unimplemented descriptor type")
-    }
+) -> AnyContextDescriptor {
+    _autoReinterpretCast(pointer).pointee
 }
 

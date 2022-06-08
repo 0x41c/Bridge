@@ -37,4 +37,4 @@ public struct EnumMetadata: TypeMetadata {
 
 }
 
-public extension EnumMetadata: Equatable {}
+extension EnumMetadata: Equatable {}

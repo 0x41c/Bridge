@@ -28,6 +28,8 @@
 		1D41C86127DEEA09003515F6 /* TypeDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86027DEEA09003515F6 /* TypeDescriptor.swift */; };
 		1D41C86327DEEABF003515F6 /* ContextDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86227DEEABF003515F6 /* ContextDescriptor.swift */; };
 		1D41C86527DEF1B3003515F6 /* RelativePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41C86427DEF1B3003515F6 /* RelativePointer.swift */; };
+		1DE58E6B285112DA002B3B69 /* ExistentialMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E6A285112DA002B3B69 /* ExistentialMetadata.swift */; };
+		1DE58E6D285112F0002B3B69 /* ExistentialMetatypeMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E6C285112F0002B3B69 /* ExistentialMetatypeMetadata.swift */; };
 		OBJ_104 /* ReinterpretCast.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* ReinterpretCast.c */; };
 		OBJ_105 /* PointerAuth.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* PointerAuth.c */; };
 		OBJ_112 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -141,6 +143,8 @@
 		1D41C86027DEEA09003515F6 /* TypeDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDescriptor.swift; sourceTree = "<group>"; };
 		1D41C86227DEEABF003515F6 /* ContextDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextDescriptor.swift; sourceTree = "<group>"; };
 		1D41C86427DEF1B3003515F6 /* RelativePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativePointer.swift; sourceTree = "<group>"; };
+		1DE58E6A285112DA002B3B69 /* ExistentialMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistentialMetadata.swift; sourceTree = "<group>"; };
+		1DE58E6C285112F0002B3B69 /* ExistentialMetatypeMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistentialMetatypeMetadata.swift; sourceTree = "<group>"; };
 		"Bridge::BSRuntime::Product" /* BSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BSRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Bridge::BSRuntimeTests::Product" /* BSRuntimeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BSRuntimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Bridge::Bridge::Product" /* Bridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +250,8 @@
 				OBJ_17 /* TupleMetadata.swift */,
 				OBJ_18 /* TypeMetadata.swift */,
 				OBJ_19 /* ValueWitnessTable.swift */,
+				1DE58E6A285112DA002B3B69 /* ExistentialMetadata.swift */,
+				1DE58E6C285112F0002B3B69 /* ExistentialMetatypeMetadata.swift */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -340,7 +346,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -351,7 +357,6 @@
 				OBJ_50 /* Unfinished list.txt */,
 				OBJ_51 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -501,7 +506,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -548,6 +553,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_57 /* Core Functions.swift in Sources */,
+				1DE58E6B285112DA002B3B69 /* ExistentialMetadata.swift in Sources */,
 				OBJ_58 /* InternalStructureBase.swift in Sources */,
 				OBJ_59 /* ClassMetadata.swift in Sources */,
 				OBJ_60 /* EnumMetadata.swift in Sources */,
@@ -560,6 +566,7 @@
 				OBJ_64 /* TupleMetadata.swift in Sources */,
 				OBJ_65 /* TypeMetadata.swift in Sources */,
 				OBJ_66 /* ValueWitnessTable.swift in Sources */,
+				1DE58E6D285112F0002B3B69 /* ExistentialMetatypeMetadata.swift in Sources */,
 				OBJ_67 /* PointerAuth.swift in Sources */,
 				1D41C86127DEEA09003515F6 /* TypeDescriptor.swift in Sources */,
 				OBJ_68 /* Extensions.swift in Sources */,

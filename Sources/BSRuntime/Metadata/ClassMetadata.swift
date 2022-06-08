@@ -33,7 +33,7 @@ public struct ClassMetadata: TypeMetadata {
         private var _reserved: (Int, Int)
         private var _rodata: UnsafeRawPointer
         #endif
-        private var _flags: UInt32
+        private var _flags: Flags
         private var _instanceAddressPoint: UInt32
         private var _instanceSize: UInt32
         private var _instanceAlignment: UInt16
@@ -52,7 +52,7 @@ public struct ClassMetadata: TypeMetadata {
     public var reserved: (Int, Int) { `_`.pointee.reserved! }
     public var rodata: UnsafeRawPointer { `_`.pointee.rodata! }
     #endif
-    public var flags: UInt32 { `_`.pointee.flags! }
+    public var flags: Flags { `_`.pointee.flags! }
     public var instanceAddressPoint: UInt32 { `_`.pointee.instanceAddressPoint! }
     public var instanceSize: UInt32 { `_`.pointee.instanceSize! }
     public var instanceAlignment: UInt16 { `_`.pointee.instanceAlignment! }
@@ -69,4 +69,20 @@ public struct ClassMetadata: TypeMetadata {
 
 }
 
-public extension ClassMetadata: Equatable {}
+extension ClassMetadata: Equatable {}
+
+public extension ClassMetadata {
+    struct Flags: OptionSet {
+        
+        public var rawValue: UInt32
+        
+        static var isSwiftPreStableABI = Flags(rawValue: 1 << 0x1)
+        static var useSwiftRefCounting = Flags(rawValue: 1 << 0x2)
+        static var hasCustomObjcName = Flags(rawValue: 1 << 0x4)
+        
+        public init(rawValue: UInt32) {
+            self.rawValue = rawValue
+        }
+        
+    }
+}
