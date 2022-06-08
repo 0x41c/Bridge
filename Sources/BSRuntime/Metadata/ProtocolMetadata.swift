@@ -35,7 +35,6 @@ public struct ProtocolMetadata: TypeMetadata {
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
     public var layoutFlags: Int { `_`.pointee.layoutFlags! }
     public var numberOfProtocols: Int { `_`.pointee.numberOfProtocols! }
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }

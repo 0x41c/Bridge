@@ -40,7 +40,6 @@ public struct TupleMetadata: TypeMetadata {
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
     public var numberOfElements: Int { `_`.pointee.numberOfElements! }
     public var labelsString: UnsafeMutablePointer<CChar> { `_`.pointee.labelsString! }
     public var elementInfo: UnsafeMutablePointer<TupleElement> { `_`.pointee.elementInfo! }

@@ -46,7 +46,6 @@ public struct ClassMetadata: TypeMetadata {
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
     public var superclass: Any.Type? { `_`.pointee.superclass! }
     #if swift(>=5.4) || canImport(ObjectiveC)
     public var reserved: (Int, Int) { `_`.pointee.reserved! }

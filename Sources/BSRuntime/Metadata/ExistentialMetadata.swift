@@ -36,6 +36,18 @@ public struct ExistentialMetadata: StructureRepresentation {
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
     public var flags: Flags { `_`.pointee.flags! }
+    public var numProtos: UInt32 { `_`.pointee.numProtos! }
+    
+    public var superclass: Any.Type? {
+        guard flags.contains(.hasSuperclassConstraint) else {
+            return nil
+        }
+        return `_`.trailing.load(as: Any.Type.self)
+    }
+    
+    // public var superclassMetadata: TypeMetadata? {} TODO: Generic metadata reflection given any value
+    
+    // TODO: Protocol List using ProtocolDescriptors
     
 }
 
@@ -45,9 +57,27 @@ public extension ExistentialMetadata {
         
         public var rawValue: UInt32
         
+        public var numWitnessTables: Int {
+            Int(rawValue & 0xFFFFFF)
+        }
+        
+        public var specialProtocol: SpecialProtocol {
+            SpecialProtocol(rawValue: UInt8((rawValue & 0x3F000000) >> 24))!
+        }
+        
+        static var hasSuperclassConstraint = Flags(rawValue: 1 << 0x40000000)
+        static var isNotClassConstrained = Flags(rawValue: 1 << 0x80000000)
+        
         public init(rawValue: UInt32) {
             self.rawValue = rawValue
         }
     }
     
+    enum SpecialProtocol: UInt8 {
+        case none = 0
+        case error = 1 // Swift.Error
+    }
+    
 }
+
+extension ExistentialMetadata: Equatable {}

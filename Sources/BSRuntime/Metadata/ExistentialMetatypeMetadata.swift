@@ -24,4 +24,18 @@
 // ===----------------------------------------------------------------------===
 
 
-import Foundation
+struct ExistentialMetatypeMetadata: StructureRepresentation {
+    
+    struct InternalRepresentation: InternalStructureBase {
+        
+        private var _kind: Int
+        private var _instanceType: Any.Type
+        private var _flags: ExistentialMetadata.Flags
+        
+    }
+    
+    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var instanceType: Any.Type { `_`.pointee.instanceType! }
+    public var flags: ExistentialMetadata.Flags { `_`.pointee.flags! }
+    
+}

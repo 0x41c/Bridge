@@ -45,6 +45,10 @@ public extension TypeMetadata {
         `_`.raw.offset(by: -1).assumingMemoryBound(to: ValueWitnessTable.self).pointee
     }
     
+    var kind: TypeMetadataKind {
+        TypeMetadataKind(raw: _autoReinterpretCast(`_`).pointee)
+    }
+    
     ///
     /// Initializes the representation of the metadata with the type it's
     /// representing.
@@ -58,7 +62,7 @@ public extension TypeMetadata {
 }
 
 
-public enum TypeMetatadaKind: Int {
+public enum TypeMetadataKind: Int {
     
     case `struct`                   = 0x200
     case `enum`                     = 0x201
@@ -77,7 +81,7 @@ public enum TypeMetatadaKind: Int {
     case `class`
     
     public init(raw: Int) {
-        self = TypeMetatadaKind(rawValue: raw) ?? .class
+        self = TypeMetadataKind(rawValue: raw) ?? .class
     }
     
 }

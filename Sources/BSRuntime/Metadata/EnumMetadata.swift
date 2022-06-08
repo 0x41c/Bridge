@@ -32,7 +32,6 @@ public struct EnumMetadata: TypeMetadata {
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var kind: TypeMetatadaKind { TypeMetatadaKind(raw: `_`.pointee.kind!) }
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
 
 }
