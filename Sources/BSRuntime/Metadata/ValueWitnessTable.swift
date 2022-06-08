@@ -162,6 +162,8 @@ public extension ValueWitnessTable {
     }
 }
 
+public extension ValueWitnessTable: Equatable {}
+
 
 // _initializeBufferWithCopyOfBuffer
 private typealias ibwcob_t = @convention(c) (

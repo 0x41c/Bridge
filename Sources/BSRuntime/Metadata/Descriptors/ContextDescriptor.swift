@@ -91,6 +91,8 @@ public extension ContextDescriptor {
     
 }
 
+public extension ContextDescriptor: Equatable {}
+
 
 func getContextDescriptor(
     from pointer: UnsafeRawPointer

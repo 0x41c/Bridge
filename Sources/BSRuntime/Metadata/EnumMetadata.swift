@@ -36,3 +36,5 @@ public struct EnumMetadata: TypeMetadata {
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
 
 }
+
+public extension EnumMetadata: Equatable {}

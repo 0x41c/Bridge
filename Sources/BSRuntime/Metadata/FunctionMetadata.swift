@@ -39,3 +39,5 @@ public struct FunctionMetadata: TypeMetadata {
     public var argumentVector: UnsafeRawPointer { `_`.pointee.argumentVector! }
 
 }
+
+public extension FunctionMetadata: Equatable {}

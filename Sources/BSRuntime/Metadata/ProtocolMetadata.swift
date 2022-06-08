@@ -41,3 +41,5 @@ public struct ProtocolMetadata: TypeMetadata {
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
 
 }
+
+public extension ProtocolMetadata: Equatable {}

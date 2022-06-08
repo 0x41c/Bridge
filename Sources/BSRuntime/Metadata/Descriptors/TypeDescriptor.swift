@@ -77,3 +77,5 @@ public extension TypeDescriptor {
     }
     
 }
+
+public extension TypeDescriptor: Equatable {}

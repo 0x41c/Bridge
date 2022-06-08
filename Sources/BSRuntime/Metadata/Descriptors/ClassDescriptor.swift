@@ -54,3 +54,5 @@ public struct ClassDescriptor: StructureRepresentation {
     public var numFields: UInt32 { `_`.pointee.numFields! }
     public var fieldOffsetVectorOffset: UInt32 { `_`.pointee.fieldOffsetVectorOffset! }
 }
+
+public extension ClassDescriptor: Equatable {}

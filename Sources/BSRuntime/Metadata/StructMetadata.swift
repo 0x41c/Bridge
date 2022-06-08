@@ -37,3 +37,5 @@ public struct StructMetadata: TypeMetadata {
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
 
 }
+
+public extension StructMetadata: Equatable {}

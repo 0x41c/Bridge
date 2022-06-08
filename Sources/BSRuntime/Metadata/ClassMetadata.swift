@@ -68,3 +68,5 @@ public struct ClassMetadata: TypeMetadata {
     public var ivarDestroyer: UnsafeRawPointer? { `_`.pointee.ivarDestroyer }
 
 }
+
+public extension ClassMetadata: Equatable {}
