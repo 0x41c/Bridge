@@ -27,8 +27,22 @@
 struct RelativePointer<Offset: FixedWidthInteger, Pointee> {
     private var _offset: Offset
     
-    var offset: UnsafePointer<Pointee> {
+    var isNull: Bool { _offset == 0 }
+    
+    var directOffset: Pointee {
+        let ourPtr: UnsafePointer<Self> = _autoReinterpretCast(self)
+        return ourPtr.raw.offset(by: Int(_offset)).assumingMemoryBound(to: Pointee.self).pointee
+    }
+    
+    var indirectOffset: UnsafePointer<Pointee> {
         _autoReinterpretCast(self).offset(by: Int(_offset))
     }
 }
 
+extension RelativePointer where Pointee == CChar {
+    
+    var string: String {
+        _autoReinterpretCast(self).offset(by: Int(_offset)).string
+    }
+    
+}

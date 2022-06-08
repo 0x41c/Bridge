@@ -47,6 +47,14 @@ public extension ContextDescriptor {
             Kind(rawValue: Int(rawValue) & 0x1F)!
         }
         
+        public var version: UInt8 {
+            UInt8((rawValue >> 0x8) & 0xFF)
+        }
+        
+        var kindSpecificFlags: UInt16 {
+            UInt16((rawValue >> 0x10) & 0xFFFF)
+        }
+        
         public init(rawValue: UInt32) {
             self.rawValue = rawValue
         }

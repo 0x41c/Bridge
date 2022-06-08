@@ -29,7 +29,28 @@ public struct ClassDescriptor: StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
         
+        private var _base: TypeDescriptor.InternalRepresentation
+        private var _superclass: RelativePointer<Int32, CChar>
+        private var _negativeSizeOrResilientBounds: UInt32
+        private var _positiveSizeOrExtraFlags: UInt32
+        private var _numImmediateMembers: UInt32
+        private var _numFields: UInt32
+        private var _fieldOffsetVectorOffset: UInt32
+        
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    
+    public var base: TypeDescriptor { _autoReinterpretCast(self).pointee }
+    
+    public var superclass: String {
+        let _superclass: RelativePointer<Int32, CChar> = `_`.pointee.superclass!
+        return _superclass.string
+    }
+    
+    public var negativeSizeOrResilientBounds: UInt32 { `_`.pointee.negativeSizeOrResilientBounds! }
+    public var positiveSizeOrResilientBounds: UInt32 { `_`.pointee.positiveSizeOrResilientBounds! }
+    public var numImmediateMembers: UInt32 { `_`.pointee.numImmediateMembers! }
+    public var numFields: UInt32 { `_`.pointee.numFields! }
+    public var fieldOffsetVectorOffset: UInt32 { `_`.pointee.fieldOffsetVectorOffset! }
 }

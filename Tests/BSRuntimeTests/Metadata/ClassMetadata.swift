@@ -26,6 +26,8 @@
 import XCTest
 @testable import BSRuntime
 
+// TODO: Properly validate the metadata created with what is read by library.
+
 class SomeClass {}
 class SomeClassInherited: SomeClass {}
 class SomeNSObject: NSObject {}
