@@ -55,3 +55,11 @@ Towards the completion of the initial goal of becoming a swift runtime modificat
 this for multiple other purposes as well. We've had basic versions of a swift-class-dump, but I beleive this could step
 just a bit further. I'll also be adding some projects located either on this repository or in an organization dedicated
 to this repository to show examples.
+
+#### Small note
+
+Azoy, if you're reading this, I would like to thank you for your contribution to the community.
+I'd also like to recommend that if you're not looking for modification functionality or find this library is unstable, be
+sure to use Azoy's runtime library ![Azoy/Echo](https://github.com/Azoy/Echo). Seriously, tremendous work was done over there
+and it's most likely better then mine. If however, you choose to stick around, I would greatly appreciate it <3
+(tldr: Heavy inspiration from a separate project I recommend using) 

@@ -23,15 +23,27 @@
 //
 // ===----------------------------------------------------------------------===
 
+import ptrauth
 
 public struct ContextDescriptor: StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
         private var _flags: UInt32
+        private var _parent: RelativePointer<Int32, InternalRepresentation>
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
     public var flags: Flags { Flags(rawValue: `_`.pointee.flags!) }
+    
+    public var parent: ContextDescriptor? {
+        let _parent: RelativePointer<Int32, InternalRepresentation> = `_`.pointee.parent!
+        if _parent.isNull {
+            return nil
+        }
+        
+        return getContextDescriptor(from: _parent.indirectOffset.raw)
+        
+    }
 }
 
 public extension ContextDescriptor {
@@ -78,3 +90,19 @@ public extension ContextDescriptor {
     }
     
 }
+
+
+func getContextDescriptor(
+    from pointer: UnsafeRawPointer
+) -> ContextDescriptor {
+    let pointer = PointerAuthentication.strip(pointer, ptrauth_key_asda)
+    let flags = pointer.load(as: ContextDescriptor.Flags.self)
+    
+    switch flags.kind { // TODO: Implement the rest.
+    case .class:
+        return ClassDescriptor(withPointer: pointer)
+    default:
+        fatalError("Unimplemented descriptor type")
+    }
+}
+

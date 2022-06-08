@@ -37,6 +37,24 @@ public protocol StructureRepresentation: CustomStringConvertible {
 
 public extension StructureRepresentation {
     
+    ///
+    /// Initializes this representation with a raw pointer. This will
+    /// be casted to the representation type.
+    ///
+    ///  - Parameters:
+    ///     - pointer: The pointer to the metadata to represent.
+    ///
+    init(withPointer pointer: UnsafeRawPointer) {
+        self = _autoReinterpretCast(pointer).mutating.pointee
+    }
+    
+    ///
+    /// Initializes this representation with a pointer to the already casted
+    /// metadata representation.
+    ///
+    ///  - Parameters:
+    ///     - structure: The structure to initialize this metadata wrapper with.
+    ///
     init(withStructure structure: UnsafeMutablePointer<InternalRepresentation>) {
         self = _autoReinterpretCast(structure).mutating.pointee
     }
