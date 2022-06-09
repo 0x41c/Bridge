@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
+//  EnumDescriptor.swift
 //  BSRuntime
 //
-//  Created by 0x41c on 2022-02-27.
+//  Created by 0x41c on 2022-06-08.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,21 +23,37 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct EnumMetadata: TypeMetadata {
 
+
+public struct EnumDescriptor: AnyContextDescriptor, StructureRepresentation {
+    
     public struct InternalRepresentation: InternalStructureBase {
 
-        private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<EnumDescriptor.InternalRepresentation>
-    }
+        private var _base: TypeDescriptor
+        private var _numPayloadCasesAndPayloadSizeOffset: UInt32
+        private var _numEmptyCases: UInt32
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    
-    public var nominalTypeDescriptor: EnumDescriptor {
-        let ptr: SignedPointer<EnumDescriptor.InternalRepresentation> = `_`.pointee.nominalTypeDescriptor!
-        return EnumDescriptor(withStructure: ptr.stripped.mutating)
     }
+    
+    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var base: TypeDescriptor { _autoReinterpretCast(self).pointee }
+    public var numPayloadCasesAndPayloadSizeOffset: UInt32 { `_`.pointee.numPayloadCasesAndPayloadSizeOffset! }
+    public var numEmptyCases: UInt32 { `_`.pointee.numEmptyCases! }
+    
+    public var numPayloadCases: Int {
+        Int(numPayloadCasesAndPayloadSizeOffset) & 0xFFFFFF
+    }
+    
+    public var payloadSizeOffset: Int {
+        Int((numPayloadCasesAndPayloadSizeOffset & 0xFF000000) >> 24)
+    }
+    
+    public var numCases: Int {
+       Int(numEmptyCases) + numPayloadCases
+    }
+    
+    // TODO: Foreign Metadata / Singleton Metadata initialization
 
 }
 
-extension EnumMetadata: Equatable {}
+extension EnumDescriptor: Equatable {}
