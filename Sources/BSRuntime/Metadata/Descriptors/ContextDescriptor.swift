@@ -42,14 +42,19 @@ extension AnyContextDescriptor {
         return _autoReinterpretCast(self).pointee
     }
     
-    // TODO: Protocol
+    public var protocolDescriptor: ProtocolDescriptor { checkKind(.protocol)
+        return _autoReinterpretCast(self).pointee
+    }
     
     public var classDescriptor: ClassDescriptor { checkKind(.class)
         return _autoReinterpretCast(self).pointee
     }
     
     // TODO: Struct
-    // TODO: Enum
+    
+    public var enumDescriptor: EnumDescriptor { checkKind(.enum)
+        return _autoReinterpretCast(self).pointee
+    }
     
     
     private func checkKind(_ kind: ContextDescriptor.Kind) {

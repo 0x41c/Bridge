@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Bridge::BSRuntime"
+               BlueprintIdentifier = "bridge::BSRuntime"
                BuildableName = "BSRuntime.framework"
                BlueprintName = "BSRuntime"
                ReferencedContainer = "container:Bridge.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Bridge::Bridge"
+               BlueprintIdentifier = "bridge::Bridge"
                BuildableName = "Bridge.framework"
                BlueprintName = "Bridge"
                ReferencedContainer = "container:Bridge.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Bridge::BridgeC"
+               BlueprintIdentifier = "bridge::BridgeC"
                BuildableName = "BridgeC.framework"
                BlueprintName = "BridgeC"
                ReferencedContainer = "container:Bridge.xcodeproj">
@@ -54,27 +54,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      enableAddressSanitizer = "YES"
-      enableUBSanitizer = "YES">
-      <AdditionalOptions>
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
-         <AdditionalOption
-            key = "MallocScribble"
-            value = ""
-            isEnabled = "YES">
-         </AdditionalOption>
-      </AdditionalOptions>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Bridge::BSRuntimeTests"
+               BlueprintIdentifier = "bridge::BSRuntimeTests"
                BuildableName = "BSRuntimeTests.xctest"
                BlueprintName = "BSRuntimeTests"
                ReferencedContainer = "container:Bridge.xcodeproj">
@@ -84,7 +70,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Bridge::BridgeTests"
+               BlueprintIdentifier = "bridge::BridgeTests"
                BuildableName = "BridgeTests.xctest"
                BlueprintName = "BridgeTests"
                ReferencedContainer = "container:Bridge.xcodeproj">
