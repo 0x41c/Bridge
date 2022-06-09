@@ -25,6 +25,7 @@
 		1DE58E792851ADD8002B3B69 /* ProtocolDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */; };
 		1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */; };
 		1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */; };
+		1DE58E7F2852778D002B3B69 /* StructDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */; };
 		OBJ_100 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* EnumMetadata.swift */; };
 		OBJ_101 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StructMetadata.swift */; };
 		OBJ_102 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* RuntimeModifiable.swift */; };
@@ -144,6 +145,7 @@
 		1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDescriptor.swift; sourceTree = "<group>"; };
+		1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDescriptor.swift; sourceTree = "<group>"; };
 		OBJ_10 /* InternalStructureBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalStructureBase.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ClassDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDescriptor.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */,
 				1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */,
 				1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */,
+				1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */,
 			);
 			path = Descriptors;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				OBJ_74 /* EnumMetadata.swift in Sources */,
 				OBJ_75 /* ExistentialMetadata.swift in Sources */,
 				OBJ_76 /* ExistentialMetatypeMetadata.swift in Sources */,
+				1DE58E7F2852778D002B3B69 /* StructDescriptor.swift in Sources */,
 				OBJ_77 /* FunctionMetadata.swift in Sources */,
 				OBJ_78 /* ProtocolMetadata.swift in Sources */,
 				OBJ_79 /* StructMetadata.swift in Sources */,

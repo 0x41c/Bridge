@@ -56,7 +56,9 @@ extension AnyContextDescriptor {
         return _autoReinterpretCast(self).pointee
     }
     
-    // TODO: Struct
+    public var structDescriptor: StructDescriptor { checkKind(.struct)
+        return _autoReinterpretCast(self).pointee
+    }
     
     public var enumDescriptor: EnumDescriptor { checkKind(.enum)
         return _autoReinterpretCast(self).pointee

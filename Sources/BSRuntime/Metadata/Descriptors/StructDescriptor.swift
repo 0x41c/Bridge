@@ -1,6 +1,6 @@
 // ===----------------------------------------------------------------------===
 //
-//  ExtensionDescriptor.swift
+//  StructDescriptor.swift
 //  BSRuntime
 //
 //  Created by 0x41c on 2022-06-09.
@@ -25,22 +25,31 @@
 
 
 
-public struct ExtensionDescriptor: AnyContextDescriptor, StructureRepresentation {
+public struct StructDescriptor: AnyContextDescriptor, StructureRepresentation {
     
     public struct InternalRepresentation: InternalStructureBase {
         
-        private var _base: ContextDescriptor.InternalRepresentation
-        private var _extendedContext: RelativePointer<Int32, CChar>
+        private var _base: TypeDescriptor.InternalRepresentation
+        private var _numFields: UInt32
+        private var _fieldOffsetVectorOffset: UInt32
         
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
-    public var base: ContextDescriptor { _autoReinterpretCast(self).pointee }
-    public var extendedContext: UnsafeRawPointer {
-        let _extendedContext: RelativePointer<Int32, CChar> = `_`.pointee.extendedContext!
-        return _extendedContext.indirectOffset.raw
+    public var base: TypeDescriptor { _autoReinterpretCast(self).pointee }
+    
+    public var numFields: Int {
+        let _numFields: UInt32 = `_`.pointee.numFields!
+        return Int(_numFields)
     }
+    
+    public var fieldOffsetVectorOffset: Int {
+        let _fieldOffsetVectorOffset: UInt32 = `_`.pointee.fieldOffsetVectorOffset!
+        return Int(_fieldOffsetVectorOffset)
+    }
+    
+    // TODO: ForeignMetadata/SingletonMetadata Initialization
     
 }
 
-extension ExtensionDescriptor: Equatable {}
+extension StructDescriptor: Equatable {}
