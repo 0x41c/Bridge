@@ -35,7 +35,11 @@ extension AnyContextDescriptor {
     
     public var flags: ContextDescriptor.Flags { _autoReinterpretCast(self).pointee }
     
-    // TODO: Module
+    
+    public var moduleDescriptor: ModuleDescriptor { checkKind(.module)
+        return _autoReinterpretCast(self).pointee
+    }
+    
     // TODO: Extension
     
     public var anonymousDescriptor: ContextDescriptor { checkKind(.anonymous)
