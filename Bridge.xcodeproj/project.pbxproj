@@ -24,6 +24,7 @@
 /* Begin PBXBuildFile section */
 		1DE58E792851ADD8002B3B69 /* ProtocolDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */; };
 		1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */; };
+		1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */; };
 		OBJ_100 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* EnumMetadata.swift */; };
 		OBJ_101 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StructMetadata.swift */; };
 		OBJ_102 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* RuntimeModifiable.swift */; };
@@ -142,6 +143,7 @@
 /* Begin PBXFileReference section */
 		1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDescriptor.swift; sourceTree = "<group>"; };
+		1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDescriptor.swift; sourceTree = "<group>"; };
 		OBJ_10 /* InternalStructureBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalStructureBase.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ClassDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDescriptor.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				OBJ_17 /* TypeDescriptor.swift */,
 				1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */,
 				1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */,
+				1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */,
 			);
 			path = Descriptors;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				OBJ_83 /* PointerAuth.swift in Sources */,
 				OBJ_84 /* Extensions.swift in Sources */,
 				OBJ_85 /* RelativePointer.swift in Sources */,
+				1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */,
 				OBJ_86 /* SignedPointer.swift in Sources */,
 				OBJ_87 /* Runtime Functions.swift in Sources */,
 				1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */,

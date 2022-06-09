@@ -40,7 +40,9 @@ extension AnyContextDescriptor {
         return _autoReinterpretCast(self).pointee
     }
     
-    // TODO: Extension
+    public var extensionDescriptor: ExtensionDescriptor { checkKind(.extension)
+        return _autoReinterpretCast(self).pointee
+    }
     
     public var anonymousDescriptor: ContextDescriptor { checkKind(.anonymous)
         return _autoReinterpretCast(self).pointee
