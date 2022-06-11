@@ -1,9 +1,7 @@
 
 <img src="./Resources/Bridge%20Banner%20Readme.png" align="center"/>
 
-<center>
-    <h1>A Modern Runtime Reflection Library</h1>
-</center>
+<h1 align="center">A Modern Runtime Reflection Library</h1>
 
 ### Mission
 
