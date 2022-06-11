@@ -1,66 +1,91 @@
-# Bridge
 
-A Modern Runtime (soon: Modification) Library
+<img src="./Resources/Bridge%20Banner%20Readme.png" align="center"/>
 
-## Setup
+<center>
+    <h1>A Modern Runtime Reflection Library</h1>
+</center>
+
+### Mission
+
+Our mission here is to provide an articulate runtime interface for swift users. This encompasses more than simply reflecting the metadata swift programs have, but also allowing it to be created and modified during execution.
+This will allow a paradigm shift from swift being a mainly statically typed language to being more of a semi-dynamic typed language. This could also alternatively be used to create other languages that derive from the swift
+runtime interface directly. Our goal is to provide that as simply and as easily as possible. For developers of other languages, this also benefits you. We'll be incorporating interop features into this library which will allow
+you to access the swift runtime from your language of choice. With C++ interoperability in the works, we're sure developers of all technical backgrounds will have fun using this library to further increase the scope in which
+swift operates.
+
+## Current Library Scope
+
+Currently, this library is under active development and polishing to encourage open-source contributions from the swift community. Current working features of the library make it an in-beta reflection library.
+
+This list will be updated as the scope changes:
+
+- [x] Complete metadata reflection
+- [x] Metadata modification (The way this is built, it already partially has support)
+- [ ] Metadata creation
+
+- [ ] Objective-C interface for Reflection
+- [ ] Objective-C interface for Modification
+- [ ] Objective-C interface for Creation
+
+The following will be considered when C++ interop is out of early phases and is no longer experimental
+
+> - [ ] C++ interface for Reflection
+> - [ ] C++ interface for Modification
+> - [ ] C++ interface for Creation
+
+There is a slight possibility that with enough cooperation, other runtimes will be added to this library to make it the complete runtime package. Objective-C metadata is partially implemented by sheer inheritance within the swift metadata
+ABI, but that will need to be expanded accordingly to properly have it integrated. When that happens, there will be separate lists for runtime features supported by the library for each runtime.
+
+## Walkthrough
+
+Fundamentally, there are a few core protocols that delegate most of the internal functionality of the library. These are used with code that needs special write restrictions that are in between a let, and a var essentially. At the
+root of these is a dynamic lookup protocol that allows the get and set of any struct's properties as if it were a keyed dictionary. The only limitation is computed properties, those lack metadata for keypaths, but we're considering
+a workaround for that. 
+
+The protocols are [AnyRuntimeModifiable](wiki/AnyRuntimeModifiable) and [RuntimeModifiable](wiki/RuntimeModifiable). The latter inherits from the former. Understanding how these work will help you understand the rest of the codebase.
 
 
+### Class Metadata
+
+This is most likely the first thing you'll want to try out. We'll start with setting up our class:
+
+```swift
+class OurClass {}
 ```
-swift package generate-xcodeproj
+
+This is an empty class, and it's likely the first thing you wrote in swift. Do you think it inherits from anything? Looking briefly at the definition, no, it wouldn't seem that way, but this is where the usefulness of a runtime library comes
+into play. Let's get its metadata.
+
+To do that we're going to use a nifty struct called [ClassMetadata](wiki/ClassMetadata). If you take a look at the documentation, you'll notice there's a variable called `superclass`. This variable represents the direct ancestor of the class
+we choose to peer into. How about we peer into `OurClass` and see if we can confirm it's not inheriting anything.
+
+```swift
+let metadata = ClassMetadata(type: OurClass.self)
 ```
 
-Whenever you need to create/modify a target, please regenerate .xcodeproj file. This is so that you can first of all, get good use of the C module,
-access all the files (like modulemaps), and be able to generate a header when you create a file. Finally, whenever you need to add a swift package dependancy,
-please do so from within the xcode project and within the Package.swift file. This will allow both the xcodeproj and the package file to cache the dependancies
-from whichever format you choose to use.
+Here we pass in the type to the ClassMetadata structure. What it does is re-cast the type into an [InternalStructureBase](wiki/InternalStructureBase.md). This structure contains all the fields that are present in the metadata and represents them
+in an accessible form. By reading from this representation, we can see what exists under the hood of our types.
 
-### Alternatively
+Let's see what the `superclass` variable has to say about `OurClass`...
 
-You don't want to use the xcodeproject, but it'll still be required to generate the project whenever doing any of the actions described
-earlier. The generated header is included below for you:
-
-```
-// ===----------------------------------------------------------------------===
-//
-//  [File]
-//  [Target]
-//
-//  Created by [Your name] on 2022-02-25.
-//
-// ===----------------------------------------------------------------------===
-//
-//  Copyright 2022 0x41c
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
-// ===----------------------------------------------------------------------===
+```swift
+print(metadata.superclass) // Optional(_TtCs12_SwiftObject)
 ```
 
-Also, feel free to add your name to the copyright on files that you create. I'm sure you'd like that :D
+Looking at this for the first time, you might be wondering what that is. That is the object that allows swift objects to be compatible with Objective-C. Isn't that interesting! You can look at it's interface here: [SwiftObject.h](https://github.com/apple/swift/blob/main/stdlib/public/runtime/SwiftObject.h).
+So it looks like our mystery is solved. We now know that even classes that do not seem to be directly inheriting anything are indirectly inheriting from this mysterious `_TtCs12_SwiftObject`.
 
+### Moving forward
 
-## What's to come
+That is only the tip of the iceberg, there is so much more you can do with this metadata, so feel free to look around the documentation. There are improvements that will be made to improve its clarity and understandability.
 
-Towards the completion of the initial goal of becoming a swift runtime modification library, I'll be adding ways to use
-this for multiple other purposes as well. We've had basic versions of a swift-class-dump, but I beleive this could step
-just a bit further. I'll also be adding some projects located either on this repository or in an organization dedicated
-to this repository to show examples.
+## Contributing
 
-#### Small note
+Will add that soon, don't worry.
 
-Azoy, if you're reading this, I would like to thank you for your contribution to the community.
+## Credits
 
-I'd also like to recommend to the community that if you're not looking for modification functionality or find this library is unstable, be
-sure to use Azoy's runtime library ![Azoy/Echo](https://github.com/Azoy/Echo). Seriously, tremendous work was done over there
-and it's most likely better then mine. If however, you choose to stick around, I would greatly appreciate it <3
-(tldr: Heavy inspiration from a separate project I recommend using) 
+- [Azoy](https://github.com/Azoy) an amazing runtime engineer and the creator of [Echo](https://github.com/Azoy/Echo).
+- [Wickwirew](https://github.com/wickwirew). Another great developer and the creator of [Runtime](https://github.com/wickwirew/Runtime).
+- [The Swift Community](https://forums.swift.org). Acknowledging everyone who has contributed to swift and has made it the language it is today.
+
