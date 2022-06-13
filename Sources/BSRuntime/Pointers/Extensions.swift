@@ -44,6 +44,10 @@ extension UnsafePointer {
         advanced(by: MemoryLayout<Pointee>.size * offset)
     }
     
+    func relative<T>() -> RelativePointer<Int32, T> {
+        _autoReinterpretCast(self).pointee
+    }
+    
 }
 
 extension UnsafePointer where Pointee == CChar {
@@ -59,6 +63,10 @@ extension UnsafeRawPointer {
     
     var mutating: UnsafeMutableRawPointer {
         UnsafeMutableRawPointer(mutating: self)
+    }
+    
+    func relative<T>() -> RelativePointer<Int32, T> {
+        _autoReinterpretCast(self).pointee
     }
     
     func offset(
@@ -79,6 +87,10 @@ extension UnsafeMutablePointer {
         (self + MemoryLayout<Pointee>.size).raw
     }
     
+    func relative<T>() -> RelativePointer<Int32, T> {
+        _autoReinterpretCast(self).pointee
+    }
+    
     func offset(
         by offset: Int
     ) -> UnsafeMutablePointer<Pointee> {
@@ -88,6 +100,10 @@ extension UnsafeMutablePointer {
 }
 
 extension UnsafeMutableRawPointer {
+    
+    func relative<T>() -> RelativePointer<Int32, T> {
+        _autoReinterpretCast(self).pointee
+    }
     
     func offset(
         by offset: Int

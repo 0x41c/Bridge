@@ -26,6 +26,8 @@
 		1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */; };
 		1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */; };
 		1DE58E7F2852778D002B3B69 /* StructDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */; };
+		1DE58E8128529D60002B3B69 /* GenericContextDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E8028529D60002B3B69 /* GenericContextDescriptor.swift */; };
+		1DE58E832852B248002B3B69 /* GenericRequirementDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E822852B248002B3B69 /* GenericRequirementDescriptor.swift */; };
 		OBJ_100 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* EnumMetadata.swift */; };
 		OBJ_101 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StructMetadata.swift */; };
 		OBJ_102 /* RuntimeModifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* RuntimeModifiable.swift */; };
@@ -146,6 +148,8 @@
 		1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDescriptor.swift; sourceTree = "<group>"; };
+		1DE58E8028529D60002B3B69 /* GenericContextDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericContextDescriptor.swift; sourceTree = "<group>"; };
+		1DE58E822852B248002B3B69 /* GenericRequirementDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRequirementDescriptor.swift; sourceTree = "<group>"; };
 		OBJ_10 /* InternalStructureBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalStructureBase.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ClassDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDescriptor.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */,
 				1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */,
 				1DE58E7E2852778D002B3B69 /* StructDescriptor.swift */,
+				1DE58E8028529D60002B3B69 /* GenericContextDescriptor.swift */,
+				1DE58E822852B248002B3B69 /* GenericRequirementDescriptor.swift */,
 			);
 			path = Descriptors;
 			sourceTree = "<group>";
@@ -598,9 +604,11 @@
 				OBJ_84 /* Extensions.swift in Sources */,
 				OBJ_85 /* RelativePointer.swift in Sources */,
 				1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */,
+				1DE58E8128529D60002B3B69 /* GenericContextDescriptor.swift in Sources */,
 				OBJ_86 /* SignedPointer.swift in Sources */,
 				OBJ_87 /* Runtime Functions.swift in Sources */,
 				1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */,
+				1DE58E832852B248002B3B69 /* GenericRequirementDescriptor.swift in Sources */,
 				OBJ_88 /* RuntimeModifiable.swift in Sources */,
 				OBJ_89 /* StructureRepresentation.swift in Sources */,
 			);
