@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1DB733302858084A00DBADEF /* ProtocolRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7332F2858084A00DBADEF /* ProtocolRequirement.swift */; };
 		1DE58E792851ADD8002B3B69 /* ProtocolDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */; };
 		1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */; };
 		1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */; };
@@ -144,6 +145,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB7332F2858084A00DBADEF /* ProtocolRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolRequirement.swift; sourceTree = "<group>"; };
 		1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDescriptor.swift; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB733312858085200DBADEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DB7332F2858084A00DBADEF /* ProtocolRequirement.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		OBJ_11 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +273,7 @@
 		OBJ_13 /* Descriptors */ = {
 			isa = PBXGroup;
 			children = (
+				1DB733312858085200DBADEF /* Supporting Files */,
 				OBJ_14 /* ClassDescriptor.swift */,
 				OBJ_15 /* ContextDescriptor.swift */,
 				OBJ_16 /* EnumDescriptor.swift */,
@@ -346,7 +357,7 @@
 			path = Metadata;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -357,7 +368,6 @@
 				OBJ_60 /* Unfinished list.txt */,
 				OBJ_61 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_51 /* BridgeTests */ = {
@@ -528,7 +538,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_53 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,6 +599,7 @@
 				1DE58E792851ADD8002B3B69 /* ProtocolDescriptor.swift in Sources */,
 				OBJ_71 /* ContextDescriptor.swift in Sources */,
 				OBJ_72 /* EnumDescriptor.swift in Sources */,
+				1DB733302858084A00DBADEF /* ProtocolRequirement.swift in Sources */,
 				OBJ_73 /* TypeDescriptor.swift in Sources */,
 				OBJ_74 /* EnumMetadata.swift in Sources */,
 				OBJ_75 /* ExistentialMetadata.swift in Sources */,

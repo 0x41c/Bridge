@@ -63,7 +63,7 @@ public struct GenericContextDescriptor: AnyContextDescriptor, StructureRepresent
     }
     
     public var requirementSize: Int {
-        numRequirements * MemoryLayout<GenericRequirementDescriptor>.size
+        numRequirements * GenericRequirementDescriptor.structureSize
     }
     
     public var parameters: [GenericParameterDescriptor] {
@@ -88,7 +88,7 @@ public struct GenericContextDescriptor: AnyContextDescriptor, StructureRepresent
     }
     
     public var size: Int {
-        MemoryLayout<Self>.size + parameterSize + requirementSize
+        Self.structureSize + parameterSize + requirementSize
     }
     
 }

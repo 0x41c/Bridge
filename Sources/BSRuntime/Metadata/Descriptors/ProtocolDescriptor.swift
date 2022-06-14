@@ -62,7 +62,30 @@ public struct ProtocolDescriptor: AnyContextDescriptor, StructureRepresentation 
         return _associatedTypeNames.indirectOffset.string
     }
     
-    // TODO: GenericRequirementDescriptor array + ProtocolRequirement array
+    
+    public var genericRequirements: [GenericRequirementDescriptor] {
+        Array(unsafeUninitializedCapacity: numRequirementsInSignature) { buffer, initializedCount in
+            for i in 0..<numRequirementsInSignature {
+                buffer[i] = _autoReinterpretCast(
+                    `_`.trailing.offset(by: i * GenericRequirementDescriptor.structureSize)
+                ).pointee
+            }
+            initializedCount = numRequirementsInSignature
+        }
+    }
+    
+    public var requirements: [ProtocolRequirement] {
+        Array(unsafeUninitializedCapacity: numRequirements) { buffer, initializedCount in
+            let startPtr = `_`.trailing + (numRequirementsInSignature * GenericRequirementDescriptor.structureSize)
+            for i in 0..<numRequirements {
+                buffer[i] = _autoReinterpretCast(
+                    startPtr.offset(by: i * ProtocolRequirement.structureSize)
+                ).pointee
+            }
+            initializedCount = numRequirements
+        }
+    }
+    
     
 }
 

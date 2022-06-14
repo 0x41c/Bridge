@@ -61,6 +61,15 @@ public extension StructureRepresentation {
     
 }
 
+public extension StructureRepresentation {
+    
+    ///
+    /// Represents the size of the internal representation.
+    ///
+    static var structureSize: Int { MemoryLayout<InternalRepresentation>.size }
+    
+}
+
 public extension StructureRepresentation where InternalRepresentation: InternalStructureBase {
     
     var description: String {
