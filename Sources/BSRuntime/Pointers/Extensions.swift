@@ -99,6 +99,14 @@ extension UnsafeMutablePointer {
     
 }
 
+extension UnsafeMutablePointer where Pointee == CChar {
+    
+    var string: String {
+        return String(cString: self)
+    }
+    
+}
+
 extension UnsafeMutableRawPointer {
     
     func relative<T>() -> RelativePointer<Int32, T> {
