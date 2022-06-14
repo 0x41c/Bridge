@@ -50,7 +50,7 @@ public struct ValueWitnessTable: StructureRepresentation {
     public var size: Int { `_`.pointee.size! }
     public var stride: Int { `_`.pointee.stride! }
     public var flags: Flags { `_`.pointee.flags! }
-    public var _extraInhabitantCount: UInt32 { `_`.pointee.extraInhabitantCount! }
+    public var extraInhabitantCount: UInt32 { `_`.pointee.extraInhabitantCount! }
     
     
     public func initializeBufferWithCopyOfBuffer(
