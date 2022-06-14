@@ -29,20 +29,55 @@ public struct TupleMetadata: TypeMetadata {
 
         private var _kind: Int
         private var _numberOfElements: Int
-        private var _labelsString: UnsafeMutablePointer<CChar>
+        private var _labelsString: UnsafeMutablePointer<CChar>?
         private var _elementInfo: UnsafeMutablePointer<TupleElement>
 
-    }
-
-    public struct TupleElement {
-        var type: Any.Type
-        var offset: Int
     }
 
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
     public var numberOfElements: Int { `_`.pointee.numberOfElements! }
     public var labelsString: UnsafeMutablePointer<CChar> { `_`.pointee.labelsString! }
     public var elementInfo: UnsafeMutablePointer<TupleElement> { `_`.pointee.elementInfo! }
+    
+    public var labels: [String] {
+        var ret = [String]()
+        let cString: UnsafeMutablePointer<CChar>? = `_`.pointee.labelsString
+        let splitString = cString?.string.split(
+            separator: " ",
+            maxSplits: numberOfElements,
+            omittingEmptySubsequences: false
+        )
+        
+        
+        for i in 0..<numberOfElements {
+            if let splitString = splitString, splitString[i] != "" {
+                ret.append(String(splitString[i]))
+            } else {
+                ret.append("\(i)")
+            }
+        }
+        
+        return ret
+    }
+    
+    public var elements: [TupleElementMetadata] {
+        Array(unsafeUninitializedCapacity: numberOfElements) { buffer, initializedCount in
+            for i in 0..<numberOfElements {
+                buffer[i] = _autoReinterpretCast(
+                    `_`.trailing.offset(by: i * TupleElementMetadata.structureSize)
+                ).pointee
+            }
+            initializedCount = numberOfElements
+        }
+    }
+    
+}
+
+public extension TupleMetadata {
+    struct TupleElement {
+        public var type: Any.Type
+        public var offset: Int
+    }
 }
 
 extension TupleMetadata: Equatable {}
