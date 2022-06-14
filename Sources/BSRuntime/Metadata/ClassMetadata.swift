@@ -75,9 +75,9 @@ public extension ClassMetadata {
         
         public var rawValue: UInt32
         
-        static var isSwiftPreStableABI = Flags(rawValue: 1 << 0x1)
-        static var useSwiftRefCounting = Flags(rawValue: 1 << 0x2)
-        static var hasCustomObjcName = Flags(rawValue: 1 << 0x4)
+        public static var isSwiftPreStableABI = Flags(rawValue: 1 << 0x1)
+        public static var useSwiftRefCounting = Flags(rawValue: 1 << 0x2)
+        public static var hasCustomObjcName = Flags(rawValue: 1 << 0x4)
         
         public init(rawValue: UInt32) {
             self.rawValue = rawValue
