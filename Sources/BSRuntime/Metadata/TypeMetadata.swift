@@ -45,6 +45,9 @@ public extension TypeMetadata {
         `_`.raw.offset(by: -1).assumingMemoryBound(to: ValueWitnessTable.self).pointee
     }
     
+    ///
+    /// The kind of the metadata
+    ///
     var kind: TypeMetadataKind {
         TypeMetadataKind(raw: _autoReinterpretCast(`_`).pointee)
     }
