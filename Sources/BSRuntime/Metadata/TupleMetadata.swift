@@ -25,7 +25,7 @@
 
 public struct TupleMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _numberOfElements: Int
@@ -34,7 +34,7 @@ public struct TupleMetadata: TypeMetadata {
 
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var numberOfElements: Int { `_`.pointee.numberOfElements! }
     public var labelsString: UnsafeMutablePointer<CChar> { `_`.pointee.labelsString! }
     public var elementInfo: UnsafeMutablePointer<TupleElement> { `_`.pointee.elementInfo! }

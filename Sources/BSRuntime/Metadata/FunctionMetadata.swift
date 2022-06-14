@@ -25,7 +25,7 @@
 
 public struct FunctionMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _flags: Int
@@ -33,7 +33,7 @@ public struct FunctionMetadata: TypeMetadata {
 
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var flags: UnsafeRawPointer { `_`.pointee.flags! }
     public var argumentVector: UnsafeRawPointer { `_`.pointee.argumentVector! }
 

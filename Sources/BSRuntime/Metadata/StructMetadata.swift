@@ -25,14 +25,14 @@
 
 public struct StructMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor>
 
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
 
 }

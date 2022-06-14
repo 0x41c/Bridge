@@ -25,7 +25,7 @@
 
 public struct ProtocolMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _layoutFlags: Int
@@ -34,7 +34,7 @@ public struct ProtocolMetadata: TypeMetadata {
 
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var layoutFlags: Int { `_`.pointee.layoutFlags! }
     public var numberOfProtocols: Int { `_`.pointee.numberOfProtocols! }
     public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }

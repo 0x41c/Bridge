@@ -25,7 +25,7 @@
 
 public struct ClassMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _superclass: Any.Type?
@@ -45,7 +45,7 @@ public struct ClassMetadata: TypeMetadata {
 
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var superclass: Any.Type? { `_`.pointee.superclass! }
     #if swift(>=5.4) || canImport(ObjectiveC)
     public var reserved: (Int, Int) { `_`.pointee.reserved! }

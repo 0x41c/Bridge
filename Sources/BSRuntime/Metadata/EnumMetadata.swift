@@ -25,13 +25,13 @@
 
 public struct EnumMetadata: TypeMetadata {
 
-    public struct InternalRepresentation: InternalStructureBase {
+    public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
         private var _nominalTypeDescriptor: SignedPointer<EnumDescriptor.InternalRepresentation>
     }
 
-    public var `_`: UnsafeMutablePointer<InternalRepresentation>
+    public var `_`: UnsafeMutablePointer<MetadataStructure>
     
     public var nominalTypeDescriptor: EnumDescriptor {
         let ptr: SignedPointer<EnumDescriptor.InternalRepresentation> = `_`.pointee.nominalTypeDescriptor!
