@@ -86,8 +86,13 @@ extension BSRuntimeTests {
         XCTAssertEqual(metadata.classObjectAddressPoint, 16, "Class object address point should be 16")
         XCTAssert(metadata.type == Class.self, "ClassMetadata type should cast back to Class")
         
-        print(metadata.valueWitnessTable)
+        let vwt = metadata.valueWitnessTable
+        typealias ClassLayout = MemoryLayout<Class>
         
+        XCTAssertEqual(vwt.size, ClassLayout.size, "Class VWT should show the same size as MemoryLayout")
+        XCTAssertEqual(vwt.stride, ClassLayout.stride, "Class VWT should show the same stride as MemoryLayout")
+        XCTAssertEqual(vwt.extraInhabitantCount, 2147483647, "Class VWT should have an extraInhabitantCount of '2147483647'")
+        XCTAssertEqual(vwt.flags.rawValue, 65543, "Class VWT should have the flags '65543'")
         
     }
     
