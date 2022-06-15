@@ -25,8 +25,8 @@
 
 import ptrauth
 
-// Hey, confused? Find the discriminators here:  https://github.com/apple/swift/blob/main/include/swift/ABI/MetadataValues.h#L1177
-// (ex: 0xda4a)
+// Hey, confused? Find the discriminators here: (ex: 0xda4a)
+//  https://github.com/apple/swift/blob/b04ae714f366208c9e95769ab275035aaf792664/include/swift/ABI/MetadataValues.h#L1355
 
 public struct ValueWitnessTable: StructureRepresentation {
     
@@ -36,6 +36,7 @@ public struct ValueWitnessTable: StructureRepresentation {
         private var _destroy: destroy_t
         private var _initializeWithCopy: iwc_t
         private var _assignWithCopy: awc_t
+        private var _initializeWithtake: iwt_t
         private var _assignWithTake: awt_t
         private var _getEnumTagSinglePayload: getsp_t
         private var _setEnumtagSinglePayload: sestp_t
@@ -94,6 +95,27 @@ public struct ValueWitnessTable: StructureRepresentation {
             with: 0x8751
         )
         _ = _assignWithCopy(destination, source, `_`.trailing)
+    }
+    
+    public func initializeWithTake(
+        _ destination: UnsafeMutableRawPointer,
+        _ source: UnsafeMutableRawPointer
+    ) {
+        let _initializeWithTake: iwt_t = getSignedFunction(
+            named: "initializeWithTake",
+            with: 0x41d8
+        )
+        _ = _initializeWithTake(destination, source, `_`.trailing)
+    }
+    
+    public func assignWithTake(
+        _ destination: UnsafeMutableRawPointer,
+        _ source: UnsafeMutableRawPointer
+    ) {
+        let _assignWithtake: awt_t = getSignedFunction(
+            named: "assignWithTake",
+            with: 0xefda
+        )
     }
     
     public func getEnumTagSinglePayload(
@@ -187,6 +209,13 @@ private typealias iwc_t = @convention(c) (
 
 // _assignWithCopy
 private typealias awc_t = @convention(c) (
+    UnsafeMutableRawPointer,
+    UnsafeMutableRawPointer,
+    UnsafeRawPointer
+) -> UnsafeMutableRawPointer
+
+// _initializeWithTake
+private typealias iwt_t = @convention(c) (
     UnsafeMutableRawPointer,
     UnsafeMutableRawPointer,
     UnsafeRawPointer
