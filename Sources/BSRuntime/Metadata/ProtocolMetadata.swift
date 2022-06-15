@@ -30,14 +30,17 @@ public struct ProtocolMetadata: TypeMetadata {
         private var _kind: Int
         private var _layoutFlags: Int
         private var _numberOfProtocols: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor> // TODO: Mutable + Vector
+        private var _nominalTypeDescriptor: SignedPointer<ProtocolDescriptor.InternalRepresentation>
 
     }
 
     public var `_`: UnsafeMutablePointer<MetadataStructure>
     public var layoutFlags: Int { `_`.pointee.layoutFlags! }
     public var numberOfProtocols: Int { `_`.pointee.numberOfProtocols! }
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
+    public var nominalTypeDescriptor: ProtocolDescriptor {
+        let protocolMem: SignedPointer<ProtocolDescriptor.InternalRepresentation> = `_`.pointee.nominalTypeDescriptor!
+        return ProtocolDescriptor(withStructure: protocolMem.stripped.mutating)
+    }
 
 }
 

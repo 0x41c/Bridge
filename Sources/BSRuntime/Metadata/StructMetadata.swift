@@ -28,12 +28,15 @@ public struct StructMetadata: TypeMetadata {
     public struct MetadataStructure: InternalStructureBase {
 
         private var _kind: Int
-        private var _nominalTypeDescriptor: SignedPointer<ContextDescriptor>
+        private var _nominalTypeDescriptor: SignedPointer<StructDescriptor.InternalRepresentation>
 
     }
 
     public var `_`: UnsafeMutablePointer<MetadataStructure>
-    public var nominalTypeDescriptor: SignedPointer<ContextDescriptor> { `_`.pointee.nominalTypeDescriptor! }
+    public var nominalTypeDescriptor: StructDescriptor {
+        let structMem: SignedPointer<StructDescriptor.InternalRepresentation> = `_`.pointee.nominalTypeDescriptor!
+        return StructDescriptor(withStructure: structMem.stripped.mutating)
+    }
 
 }
 
