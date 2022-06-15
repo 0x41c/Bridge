@@ -116,6 +116,7 @@ public struct ValueWitnessTable: StructureRepresentation {
             named: "assignWithTake",
             with: 0xefda
         )
+        _ = _assignWithtake(destination, source, `_`.trailing)
     }
     
     public func getEnumTagSinglePayload(
