@@ -28,4 +28,4 @@ import XCTest
 import BSRuntimeTests
 
 
-var tests = []
+// TODO: Implement proper LinuxMain when adding cross-platform runtime support.
