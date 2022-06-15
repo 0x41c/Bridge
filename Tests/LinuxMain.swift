@@ -23,9 +23,4 @@
 //
 // ===----------------------------------------------------------------------===
 
-
-import XCTest
-import BSRuntimeTests
-
-
 // TODO: Implement proper LinuxMain when adding cross-platform runtime support.
