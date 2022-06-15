@@ -26,7 +26,7 @@
 		1DB7333828581E8300DBADEF /* BSRuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7333728581E8300DBADEF /* BSRuntimeTests.swift */; };
 		1DB7333A28581F7100DBADEF /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7333928581F7100DBADEF /* ClassMetadata.swift */; };
 		1DB7333C285831D900DBADEF /* TupleElementMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7333B285831D900DBADEF /* TupleElementMetadata.swift */; };
-		1DB7333F28599D1600DBADEF /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7333628581DA200DBADEF /* LinuxMain.swift */; };
+		1DB7334128599E5F00DBADEF /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB7334028599E5F00DBADEF /* LinuxMain.swift */; };
 		1DE58E792851ADD8002B3B69 /* ProtocolDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */; };
 		1DE58E7B28527421002B3B69 /* ModuleDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */; };
 		1DE58E7D2852762F002B3B69 /* ExtensionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */; };
@@ -146,10 +146,10 @@
 
 /* Begin PBXFileReference section */
 		1DB7332F2858084A00DBADEF /* ProtocolRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolRequirement.swift; sourceTree = "<group>"; };
-		1DB7333628581DA200DBADEF /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		1DB7333728581E8300DBADEF /* BSRuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSRuntimeTests.swift; sourceTree = "<group>"; };
 		1DB7333928581F7100DBADEF /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
 		1DB7333B285831D900DBADEF /* TupleElementMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleElementMetadata.swift; sourceTree = "<group>"; };
+		1DB7334028599E5F00DBADEF /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		1DE58E782851ADD8002B3B69 /* ProtocolDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7A28527421002B3B69 /* ModuleDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleDescriptor.swift; sourceTree = "<group>"; };
 		1DE58E7C2852762F002B3B69 /* ExtensionDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDescriptor.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 		OBJ_44 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1DB7333628581DA200DBADEF /* LinuxMain.swift */,
+				1DB7334028599E5F00DBADEF /* LinuxMain.swift */,
 				OBJ_45 /* BSRuntimeTests */,
 				OBJ_51 /* BridgeTests */,
 			);
@@ -582,7 +582,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_131 /* Package.swift in Sources */,
-				1DB7333F28599D1600DBADEF /* LinuxMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				1DB7334128599E5F00DBADEF /* LinuxMain.swift in Sources */,
 				1DB7333828581E8300DBADEF /* BSRuntimeTests.swift in Sources */,
 				1DB7333A28581F7100DBADEF /* ClassMetadata.swift in Sources */,
 			);
