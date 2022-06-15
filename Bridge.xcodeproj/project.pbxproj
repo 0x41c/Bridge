@@ -333,6 +333,7 @@
 		OBJ_44 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1DB7333628581DA200DBADEF /* LinuxMain.swift */,
 				OBJ_45 /* BSRuntimeTests */,
 				OBJ_51 /* BridgeTests */,
 			);
@@ -367,7 +368,6 @@
 				OBJ_59 /* wiki */,
 				OBJ_60 /* Unfinished list.txt */,
 				OBJ_61 /* README.md */,
-				1DB7333628581DA200DBADEF /* LinuxMain.swift */,
 			);
 			sourceTree = "<group>";
 		};
