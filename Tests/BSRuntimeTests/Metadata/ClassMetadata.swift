@@ -3,7 +3,7 @@
 //  ClassMetadata.swift
 //  BSRuntimeTests
 //
-//  Created by 0x41c on 2022-03-12.
+//  Created by 0x41c on 2022-06-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,28 +23,72 @@
 //
 // ===----------------------------------------------------------------------===
 
+
 import XCTest
-@testable import BSRuntime
+import BSRuntime
 
-// TODO: Properly validate the metadata created with what is read by library.
+// MARK: Test Structures
 
-class SomeClass {}
-class SomeClassInherited: SomeClass {}
-class SomeNSObject: NSObject {}
-class InheritingNSObject: SomeNSObject {}
 
-final class ClassMetadataTests: XCTestCase {
-
-    func testCasting() {
-        let classes: [Any.Type] = [
-            SomeClass.self, SomeClassInherited.self, SomeNSObject.self, InheritingNSObject.self
-        ]
-        for `class` in classes {
-            // This accesses `_` which will crash if it got messed up. Allows me to spot it faster XD
-            let md = ClassMetadata(withType: `class`)
-            print(md)
-            print(md.nominalTypeDescriptor)
-        }
+class Class {
+    
+    let int: Int
+    let bool: Bool
+    let string: String
+    
+    init(a: Int, b: Bool, c: String) {
+        int = a
+        bool = b
+        string = c
     }
+    
+}
 
+class GenericClass<A, B> {
+    
+    let a: A
+    let b: B
+    
+    init(a: A, b: B) {
+        self.a = a
+        self.b = b
+    }
+    
+}
+
+class ResilientClass<A>: JSONEncoder {
+    
+    let a: A
+    
+    init(a: A) {
+        self.a = a
+    }
+    
+}
+
+
+// MARK: Tests
+
+extension BSRuntimeTests {
+    
+    func testClassMetadata() throws {
+        
+        let metadata = ClassMetadata(withType: Class.self)
+        
+        // XCTAssertEqual(metadata.superclass, _TtCs12_SwiftObject, "Superclass should be SwiftObject")
+        XCTAssertEqual(metadata.kind, .class, "Class kind should be .class")
+        XCTAssertNotNil(metadata.superclass, "Class should always have a superclass")
+        XCTAssertEqual(metadata.flags.rawValue, 2, "Class should be swiftPreStableABI (2)")
+        XCTAssertEqual(metadata.instanceAddressPoint, 0, "Class instance address point should be zero")
+        XCTAssertEqual(metadata.instanceSize, 48, "Class instance size should be 48")
+        XCTAssertEqual(metadata.instanceAlignment, 7, "Class instance alignment should be 7")
+        XCTAssertEqual(metadata.classObjectSize, 128, "Class size should be 128")
+        XCTAssertEqual(metadata.classObjectAddressPoint, 16, "Class object address point should be 16")
+        XCTAssert(metadata.type == Class.self, "ClassMetadata type should cast back to Class")
+        
+        print(metadata.valueWitnessTable)
+        
+        
+    }
+    
 }

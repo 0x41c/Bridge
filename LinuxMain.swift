@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  EnumMetadata.swift
-//  BSRuntimeTests
+//  LinuxMain.swift
+//  Bridge
 //
-//  Created by 0x41c on 2022-03-12.
+//  Created by 0x41c on 2022-06-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -25,31 +25,7 @@
 
 
 import XCTest
-@testable import BSRuntime
-
-enum Cool {
-    case One
-}
-
-enum Cool2 {
-    case One
-    case Two
-}
+import BSRuntimeTests
 
 
-enum Cool3 {
-    case One
-    case Two
-    case Three
-}
-
-class EnumMetadataTests: XCTestCase {
-    func testCasting() {
-        let enumTypes: [Any.Type] = [
-            Cool.self, Cool2.self, Cool3.self
-        ]
-        for enumType in enumTypes {
-            print(EnumMetadata(withType: enumType))
-        }
-    }
-}
+var tests = []

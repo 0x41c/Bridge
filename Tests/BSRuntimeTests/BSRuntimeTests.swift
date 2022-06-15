@@ -1,9 +1,9 @@
 // ===----------------------------------------------------------------------===
 //
-//  StructMetadata.swift
+//  BSRuntimeTests.swift
 //  BSRuntimeTests
 //
-//  Created by 0x41c on 2022-03-12.
+//  Created by 0x41c on 2022-06-13.
 //
 // ===----------------------------------------------------------------------===
 //
@@ -23,19 +23,7 @@
 //
 // ===----------------------------------------------------------------------===
 
+
 import XCTest
-@testable import BSRuntime
 
-struct struct1 {}
-
-class StructMetadataTests: XCTestCase {
-    
-    func testCasting() {
-        let types: [Any.Type] = [struct1.self]
-        
-        for `type` in types {
-            print(StructMetadata(withType: `type`))
-        }
-    }
-    
-}
+final class BSRuntimeTests: XCTestCase {}
