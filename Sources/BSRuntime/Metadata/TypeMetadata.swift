@@ -24,44 +24,35 @@
 // ===----------------------------------------------------------------------===
 
 
-public protocol TypeMetadata: StructureRepresentation {
-    associatedtype MetadataStructure = InternalRepresentation
-}
+public protocol TypeMetadata: AnyMetadata {}
 
 
 public extension TypeMetadata {
     
-    ///
-    /// The type that the metadata represents.
-    ///
-    var type: Any.Type {
-        unsafeBitCast(`_`, to: Any.Type.self)
+    var nominalTypeDescriptor: TypeDescriptor {
+        switch self {
+        case let classMetadata as ClassMetadata:
+            return classMetadata.nominalTypeDescriptor.base
+        case let structMetadata as StructMetadata:
+            return structMetadata.nominalTypeDescriptor.base
+        case let enumMetadata as EnumMetadata:
+            return enumMetadata.nominalTypeDescriptor.base
+        default:
+            fatalError("Couldn't get nominalTypeDescriptor from unknown metadata")
+        }
+        
     }
     
-    ///
-    /// The types VWT located right before the base of the type structure.
-    ///
-    var valueWitnessTable: ValueWitnessTable {
-        `_`.raw.offset(by: -1).assumingMemoryBound(to: ValueWitnessTable.self).pointee
+    var genericTypeArray: [Any.Type] {
+        if !nominalTypeDescriptor.flags.contains(.generic) {
+            return []
+        }
+        
+        // TODO: Finish this
+        
+        return []
     }
     
-    ///
-    /// The kind of the metadata
-    ///
-    var kind: TypeMetadataKind {
-        TypeMetadataKind(raw: _autoReinterpretCast(`_`).pointee)
-    }
-    
-    ///
-    /// Initializes the representation of the metadata with the type it's
-    /// representing.
-    ///
-    /// - Parameters:
-    ///   - _type: The type to represent the metadata of.
-    ///
-    init(withType _type: Any.Type) {
-        self = _autoReinterpretCast(_type).mutating.pointee
-    }
 }
 
 

@@ -24,19 +24,19 @@
 // ===----------------------------------------------------------------------===
 
 
-public struct ExistentialMetadata: StructureRepresentation {
+public struct ExistentialMetadata: AnyMetadata {
     
     public struct InternalRepresentation: InternalStructureBase {
         
         private var _kind: Int
         private var _flags: Flags
-        private var _numProtos: UInt32
+        private var _numProtocols: UInt32
         
     }
     
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
     public var flags: Flags { `_`.pointee.flags! }
-    public var numProtos: UInt32 { `_`.pointee.numProtos! }
+    public var numProtocols: UInt32 { `_`.pointee.numProtocols! }
     
     public var superclass: Any.Type? {
         guard flags.contains(.hasSuperclassConstraint) else {

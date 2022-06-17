@@ -23,7 +23,7 @@
 //
 // ===----------------------------------------------------------------------===
 
-public struct FunctionMetadata: TypeMetadata {
+public struct FunctionMetadata: AnyMetadata {
 
     public struct MetadataStructure: InternalStructureBase {
 

@@ -24,7 +24,7 @@
 // ===----------------------------------------------------------------------===
 
 
-struct ExistentialMetatypeMetadata: StructureRepresentation {
+struct ExistentialMetatypeMetadata: AnyMetadata {
     
     struct InternalRepresentation: InternalStructureBase {
         
