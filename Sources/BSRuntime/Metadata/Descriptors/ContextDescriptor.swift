@@ -137,11 +137,3 @@ public extension ContextDescriptor {
 }
 
 extension ContextDescriptor: Equatable {}
-
-
-func getContextDescriptor(
-    from pointer: UnsafeRawPointer
-) -> AnyContextDescriptor {
-    _autoReinterpretCast(pointer).pointee
-}
-
