@@ -71,7 +71,7 @@ class ResilientClass<A>: JSONEncoder {
 
 extension BSRuntimeTests {
     
-    func testClassMetadata() throws {
+    func testClassMetadata() {
         
         let metadata = ClassMetadata(withType: Class.self)
         
@@ -93,6 +93,15 @@ extension BSRuntimeTests {
         XCTAssertEqual(vwt.stride, ClassLayout.stride, "Class VWT should show the same stride as MemoryLayout")
         XCTAssertEqual(vwt.extraInhabitantCount, 2147483647, "Class VWT should have an extraInhabitantCount of '2147483647'")
         XCTAssertEqual(vwt.flags.rawValue, 65543, "Class VWT should have the flags '65543'")
+        
+    }
+    
+    func testGenericClassMetadata() {
+        
+        typealias Generic = GenericClass<Int, Bool>
+        let metadata = ClassMetadata(withType: Generic.self)
+        
+        _ = metadata
         
     }
     
