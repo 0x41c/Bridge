@@ -255,6 +255,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		1DEB068528BAAD0F0051B6FB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* InternalStructureBase.swift */,
+				OBJ_27 /* PointerAuth.swift */,
+				OBJ_33 /* RuntimeModifiable.swift */,
+				OBJ_34 /* StructureRepresentation.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		OBJ_11 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,13 +419,10 @@
 		OBJ_8 /* BSRuntime */ = {
 			isa = PBXGroup;
 			children = (
+				1DEB068528BAAD0F0051B6FB /* Base */,
 				1DB7333D2858FE7600DBADEF /* Utility */,
 				OBJ_28 /* Pointers */,
 				OBJ_11 /* Metadata */,
-				OBJ_10 /* InternalStructureBase.swift */,
-				OBJ_27 /* PointerAuth.swift */,
-				OBJ_33 /* RuntimeModifiable.swift */,
-				OBJ_34 /* StructureRepresentation.swift */,
 			);
 			name = BSRuntime;
 			path = Sources/BSRuntime;
