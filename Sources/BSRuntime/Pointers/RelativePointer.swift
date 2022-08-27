@@ -37,6 +37,10 @@ struct RelativePointer<Offset: FixedWidthInteger, Pointee> {
     var indirectOffset: UnsafePointer<Pointee> {
         _autoReinterpretCast(self).offset(by: Int(_offset))
     }
+    
+    public init() {
+        _offset = 0
+    }
 }
 
 extension RelativePointer where Pointee == CChar {

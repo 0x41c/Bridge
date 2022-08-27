@@ -82,7 +82,7 @@ public struct ContextDescriptor: AnyContextDescriptor, StructureRepresentation {
     public var `_`: UnsafeMutablePointer<InternalRepresentation>
     
     public var parent: AnyContextDescriptor? {
-        let _parent: RelativePointer<Int32, Void> = `_`.pointee.parent!
+        let _parent: RelativePointer<Int32, Void> = `_`.pointee.parent ?? RelativePointer()
         if _parent.isNull {
             return nil
         }
