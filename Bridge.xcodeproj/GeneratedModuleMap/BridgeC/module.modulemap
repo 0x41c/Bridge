@@ -1,4 +1,4 @@
 module BridgeC {
-    umbrella "/Users/Corban/Desktop/development/Bridge/Sources/BridgeC/include"
+    umbrella "/Users/Corban/projects/programming/swift/Bridge/Sources/BridgeC/include"
     export *
 }

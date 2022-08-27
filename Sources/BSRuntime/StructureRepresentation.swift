@@ -88,3 +88,9 @@ public extension StructureRepresentation where InternalRepresentation: InternalS
     }
     
 }
+
+public extension StructureRepresentation {
+    var description: String {
+        "\(String(describing: Self.self))[\(`_`)]()"
+    }
+}
